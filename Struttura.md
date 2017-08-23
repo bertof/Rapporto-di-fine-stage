@@ -2,41 +2,90 @@
 
 ## Struttura del documento
 
-1. L'azienda
-      1. Storia dell'azienda
-      2. Di cosa si occupa e servizi offerti
-      3. Premi e certificazioni
-
-2. Progetto di stage
-      1. Descrizione del progetto
-      2. Motivo della nascita del progetto
+1. Introduzione
+      1. L'azienda
+            1. Di cosa si occupa e servizi offerti
+            2. Nascita
+            3. Progetti importanti
+            4. Premi e certificazioni
+            
+      2. Progetto di stage
+            1. Descrizione del progetto
+            2. Motivo della nascita del progetto
+      
       3. Obiettivi dello stage
             1. Obiettivi obbligatori
             2. Obiettivi desiderabili
-      4. Vincoli tecnologici
-      5. Pianificazione del lavoro
+            3. Vincoli tecnologici
+      
+      4. Pianificazione del lavoro
 
-3. Analisi dei formati e dei protocolli di trasmissione standard
+
+2. Analisi dei formati e dei protocolli di trasmissione standard
       1. Codifica video
             1. Storia dei formati
             2. Formati comunemente usati
                   - Pregi, difetti e applicazioni
+
       2. Protocolli
             1. Storia dei protocolli e loro standardizzazione
             2. Differenza tra protocolli real time e on demand
-      3. Problemi dell'UDP con i firewall
-      4. WebRTC, bello ma...
-      5. Soluzioni esistenti
+            3. Problemi dell'UDP con i firewall
+
+      3. Architettura di una piattaforma di streaming
+
+      3. Mezzi di trasmissione mobili
+            1. WiFi
+            2. Bluetooth
+            3. Rete 4G
+
+      3. Soluzioni esistenti
+            1. YouTube
+            2. Red5 Pro
+            3. Contus Vplay
+            4. Streamroot
+            5. Wowza Streaming Engine
+
+
+      4. Nuovi orizzonti
+            1. Blockchain
+            2. Streaming peer to peer
+
+
+3. Analisi dei requisiti
+      1. Elenco dei requisiti
+            1. Classificazione dei requisiti
+            2. Notazione dei requisiti
+            3. Requisiti funzionali
+            4. Requisiti di qualità
+            5. Requisiti di ambiente
+
+      2. Usecase e diagrammi UML
+
 
 4. Tecnologie utilizzate
       1. Linguaggi di programmazione
-            - Java
+            - Perché Java?
+                  - Integrazione con Android
+                  - Sistemi virtualizzati e multipiattaform
+                  - Facile parallelismo
+
       2. Piattaforma di sviluppo (TomCat8)
-            - Pregi e difetti
+            - Perché TomCat8?
+                  - Piattaforma di riferimento
+                  - Codice open source
+                  - Facile configurazione
+
       3. WebSocket in Java
             - Interfacce
             - Implementazioni
+                  - javax.WebSocket espone solo l'interfaccia
+            - Librerie utilizzate
+                  - Scelta delle librerie utilizzate
+
       4. JSON con GSON
+
+
       5. Strumenti di supporto
       1. Strumenti di test e verifica
             - JUnit
