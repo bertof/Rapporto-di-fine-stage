@@ -112,7 +112,7 @@
             3. Docker
       
 5. Progettazione e codifica
-      1. Scelta dei formati e dei potocolli
+      1. Scelta dei formati e dei protocolli
       2. Scelta dei componenti riutilizzabili dell'architettura
       3. Progettazione del sistema di autenticazione
       4. Progettazione del sistema di relay
