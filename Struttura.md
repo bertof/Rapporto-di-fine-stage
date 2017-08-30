@@ -44,7 +44,7 @@
             3. Architettura di una piattaforma di streaming
                   1. Struttura di massima
                   2. Inbound
-                        - Stremaing
+                        - Streaming
                         - Upload file
                   3. Storage
                         - Sistemi elastici
