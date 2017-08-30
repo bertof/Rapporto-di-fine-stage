@@ -20,16 +20,16 @@
             - Quali proposte ho ricevuto
             - Per quale motivo ho scelto questo stage
             - Per quale motivo ho scelto questa azienda
-
-3. COSA-COME - Il prodotto dello stage
-      1. Obiettivi dello stage
+      3. Obiettivi dello stage
             1. Obiettivi obbligatori
             2. Obiettivi desiderabili
             3. Vincoli tecnologici
-      2. Pianificazione del lavoro
+      4. Pianificazione del lavoro
             1. Scelte sulla pianificazione
             2. Strumenti utilizzati
-      3. Acquisizione delle conoscenze settoriali
+
+3. COSA-COME - Il prodotto dello stage
+      1. Acquisizione delle conoscenze settoriali
             1. Codifica video
                   1. Storia della codifica video
                   2. Formati comunemente usasi
@@ -60,12 +60,12 @@
                         - WiFi 
                         - Bluetooth 
                         - Rete 4G
-      4. Analisi dei requisiti
+      2. Analisi dei requisiti
             1. Analisi preliminare
                   - Definizione dei requisiti
             2. Definizione dei casi d'uso
                   - Diagramma UML
-      5. Struttura della piattaforma
+      3. Struttura della piattaforma
             1. Diagramma strutturale
                   - Diagramma strutturale
                   - Spiegazione della funzione delle componenti
@@ -75,7 +75,7 @@
                   - Contus Vplay
                   - Streamroot
                   - Wowza Streaming Engine
-      6. Tecnologie utilizzate
+      4. Tecnologie utilizzate
             1. Linguaggi - Java
                   - Integrazione facile con client Android
             2. Piattaforma
@@ -96,10 +96,10 @@
                         - Wireshark
                   4. Strumenti di continuous integration
                         - Docker
-      7. Nuovi orizzonti
+      5. Nuovi orizzonti
             1. Blockchain
             2. Streaming peer to peer
-      8. Qualifica
+      6. Qualifica
             1. Verifica
                   1. Analisi statica
                   2. Analisi dinamica      
