@@ -3,8 +3,9 @@
 %**************************************************************
 \chapter{L'azienda\label{cap:lazienda}}
 
-\section{I prodotti}
+\section{Prodotti e servizi}
 %TODO: Sezione i servizi dell'azienda
+\nomeAzienda{} 
 
 \section{Come lavora}
 
@@ -34,28 +35,30 @@
    Il sistema di tracking del tempo impegnato da ciascun task aiuta il project manager a valutare lo stato del progetto, confrontandolo con le stime fatte a preventivo.
 
    \subsection{Progetti importanti}
+   %TODO: sezione progetti importanti
 
    \subsection{Premi e certificazioni}
+   %TODO: sezione premi e certificazioni
 
 \section{Tecnologie utilizzate}
 L'azienda fa uso di un gran numero di tecnologie durante le proprie attività, di seguito analizzerò le più utilizzate.
 
    \subsection{Rackspace}
-   \begin{figure}[htbp]
+   \begin{figure}[H]
       \begin{center}
          \includegraphics[width=6cm,height=6cm,keepaspectratio]{immagini/rackspace-logo}
       \end{center}
-      \caption{Logo di Rackspace}
+      \caption{Logo di Rackspace}\label{logorackspace}
    \end{figure}
    Rackspace è un cloud provider che offre servizi di managed cloud computing, basati su VPS e altri servizi cloud, come AWS, Microsoft Azure e OpenStack. Questo tipo di servizio permette di gestire facilmente servizi cloud utilizzati, mantenendo il pieno controllo di costi e infrastrutture, senza la necessità di conoscere a fondo ogni componente utilizzato.
    \nomeAzienda{} usa Rackspace come hosting provider nel caso di progetti complessi, quando è necessaria una completa gestione delle risorse.
 
    \subsection{Firebase}
-   \begin{figure}[htbp]
+   \begin{figure}[H]
       \begin{center}
          \includegraphics[width=6cm,height=6cm,keepaspectratio]{immagini/firebase-logo}
       \end{center}
-      \caption{Logo di Firebase}
+      \caption{Logo di Firebase}\label{logofirebase}
    \end{figure}
    Firebase è una piattaforma di sviluppo per applicazioni Web e mobile, parte di Google Cloud Platform; fornisce servizi di scambio di messaggi e basi di dati in tempo reale, spazio di archiviazione, sistemi di autenticazione, web hosting e test automatici per applicazioni Android. La piattaforma fornisce anche un servizio di analisi e profilazione degli utenti e l'integrazione con il sistema di annunci pubblicitari di Google.
    \nomeAzienda{} utilizza Firebase quando necessità della creazione di un ambiente di sviluppo completo, veloce e facile da manutenere.
@@ -63,30 +66,30 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività, d
    %\pagebreak %TODO: find a better fix for the image
 
    \subsection{Java}
-   \begin{figure}[htbp]
+   \begin{figure}[H]
       \begin{center}
          \includegraphics[width=6cm,height=6cm,keepaspectratio]{immagini/java-logo}      
       \end{center}
-      \caption{Logo di Java}
+      \caption{Logo di Java}\label{logojava}
    \end{figure}
    Java è un linguaggio di programmazione ad alto livello orientato agli oggetti pensato per essere il più possibile indipendente dalla piattaforma sulla quale viene eseguito. Java supera questo ostacolo utilizzano una macchina virtuale, la JVM, che permette di astrarre il sistema sottostante. Il vantaggio di Java sui linguaggi compilati tradizionali è proprio quello di poter essere eseguito su una qualsiasi piattaforma, a patto che esista una JVM per questa. Tra le tecnologie utilizzate da \nomeAzienda{} troviamo Android, fortemente basato su Java, e utilizzato per la creazione di applicazioni per dispositivi mobile. Molti dei progetti passati dell'azienda sono legati ad applicazioni Android, ma \nomeAzienda{} utilizza Java anche nel caso di servizi web ad alto parallelismo.
 
    \subsection{Git e Bitbucket}
-   \begin{figure}[htbp]
+   \begin{figure}[H]
       \centering
       {\includegraphics[height=1.5cm,keepaspectratio]{immagini/git-logo} }
       \qquad
       {\includegraphics[height=1.5cm,keepaspectratio]{immagini/bitbucket-logo} }
-      \caption{Loghi di Git e Bitbucket}
+      \caption{Loghi di Git e Bitbucket}\label{loghigitbitbucket}
    \end{figure}
    \nomeAzienda{} utilizza Git come CVS per il versionamento del codice: Git è in grado di gestire progetti anche molto complessi in modo efficiente; il suo sistema completamente distribuito permette di conservare copie sicure del prodotto in luoghi separati, garantendone la consistenza. Per facilitare la gestione del codice e automatizzare alcune attività, l'azienda ha scelto di utilizzare Bitbucket come hoster per le proprie repository. Bitbucket integra il servizio di pipeline, che permette di eseguire degli script in ambienti virtualizzati basati su Docker; in questo modo sono stati automatizzati i test di unità e integrazione e i controlli della quality assurance.
 
    \subsection{WordPress}
-   \begin{figure}[htbp]
+   \begin{figure}[H]
       \begin{center}
          \includegraphics[width=6cm,height=6cm,keepaspectratio]{immagini/wordpress-logo}
       \end{center}
-      \caption{Logo di WordPress}
+      \caption{Logo di WordPress}\label{logowordpress}
    \end{figure}
    WordPress è una piattaforma editoriale personale; nato per gestire semplici blog, viene utilizzato come piattaforma di sviluppo di siti molto più complessi, sfruttando il sistema a plugin su cui e basato. L'utilizzo di WordPress come base di un sito permette di iniziare a lavorare con un framework riutilizzabile, stabile e aggiornato che gestisce i contenuti e i dati del sito, permettendo allo sviluppatore di concentrarsi sulla loro presentazione all'utente.
    \nomeAzienda{} sfrutta WordPress come base dei propri siti anche per rendere la modifica dei contenuti semplice al proprio cliente.
