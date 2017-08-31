@@ -58,29 +58,29 @@
 % Impostazioni di biblatex %TODO: check
 %**************************************************************
 
-\bibliography{bibliografia} % database di biblatex 
+%\bibliography{bibliografia} % database di biblatex 
 
-\defbibheading{bibliography} {
-    \cleardoublepage{}
-    \phantomsection{}
-    \addcontentsline{toc}{chapter}{\bibname}
-    \chapter*{\bibname\markboth{\bibname}{\bibname}}
-}
+%\defbibheading{bibliography} {
+%    \cleardoublepage{}
+%    \phantomsection{}
+%    \addcontentsline{toc}{chapter}{\bibname}
+%    \chapter*{\bibname\markboth{\bibname}{\bibname}}
+%}
 
-\setlength\bibitemsep{1.5\itemsep} % spazio tra entry
+%\setlength\bibitemsep{1.5\itemsep} % spazio tra entry
 
-\DeclareBibliographyCategory{opere}
-\DeclareBibliographyCategory{web}
+%\DeclareBibliographyCategory{opere}
+%\DeclareBibliographyCategory{web}
 
-\addtocategory{opere}{womak:lean-thinking}
-\addtocategory{web}{site:agile-manifesto}
+%\addtocategory{opere}{womak:lean-thinking}
+%\addtocategory{web}{site:agile-manifesto}
 
-\defbibheading{opere}{\section*{Riferimenti bibliografici}}
-\defbibheading{web}{\section*{Siti Web consultati}}
+%\defbibheading{opere}{\section*{Riferimenti bibliografici}}
+%\defbibheading{web}{\section*{Siti Web consultati}}
 
 
 %**************************************************************
 % Impostazioni di glossaries
 %**************************************************************
-\input{glossario} % database di termini
+\input{fine/glossario} % database di termini
 \makeglossaries{}
