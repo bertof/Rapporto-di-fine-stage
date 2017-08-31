@@ -7,9 +7,37 @@
 %TODO: Sezione i servizi dell'azienda
 
 \section{Come lavora}
-%TODO: Sezione come lavora
 
-\section{Che tecnologie utilizzate}
+   \subsection{Modello di sviluppo}
+   \nomeAzienda{} lavora con il modello di sviluppo Agile di tipo Scrum. Questo modello pone una minore rigidità sulla documentazione e sullo sviluppo del prodotto, permettendo modifiche in corso d'opera.
+   \\
+   Scrum definisce uno sprint come l'unità di misura dello sviluppo di un progetto, un periodo di tempo di lunghezza fissata, generalmente di una settimana.
+   Gli sprint sono pianificati tramite una riunione, durante la quale sono definiti gli obiettivi dello sprint. Le attività di ciascun processo vengono divise e spezzettate dallo scrum master, fino ad ottenere task atomici, che vengono organizzati in base alle loro dipendenze ed assegnati ai componenti del team. Questo tipo di divisione garantisce una visione totale dei task all'interno di uno sprint e permette il massimo parallelismo sul loro avanzamento.
+   \\
+   Ogni giorno il team si ritrova con una breve riunione, detta ``daily scrum'', per controllare lo stato dei task e degli obiettivi. I meeting giornalieri permettono al project manager di avere misure dello stato del progetto con più frequenza, rispetto ad altri modelli di sviluppo, così da intervenire più rapidamente alla necessità di correzioni. 
+   Un altro vantaggio del metodo Scrum, e più in generale dei modelli agili, è quello di poter vedere il risultato del proprio lavoro più in fretta rispetto ai metodi tradizionali: i daily scrum servono anche ad incentivare gli sviluppatori e a fornire loro una sensazione di progresso, che, invece, viene persa se i tempi tra un aggiornamento e l'altro si dilatano.
+   \\
+   Il coordinamento del lavoro viene gestito tramite fogli di calcolo con funzioni automatiche condivisi all'interno del team. Per ogni task è segnalato il livello di avanzamento, che deve essere aggiornato da colui a cui è stato assegnato, riportando il tempo impiegato ed eventuali note.
+   \\
+   Gli stati in cui un task si può trovare sono i seguenti:
+   \begin{itemize}
+      \item{\textbf{Analysis}: il task richiede analisi}
+      \item{\textbf{Pending}: il task è definito ed è in attesa di essere svolto}
+      \item{\textbf{Blocked}: il task è bloccato a causa delle sue dipendenze}
+      \item{\textbf{Development}: il task è in svolgimento}
+      \item{\textbf{Testing}: lo sviluppo è stato completato, ma il codice sta venendo testato}
+      \item{\textbf{Reworking}: lo sviluppo è fallito e sta venendo rieseguito}
+      \item{\textbf{Refactoring}: lo sviluppo è completato, ma il codice sta venendo ripulito }
+      \item{\textbf{Completed}: lo sviluppo è completato}
+      \item{\textbf{Confirmed}: il task è stato validato}
+   \end{itemize}
+   Il sistema di tracking del tempo impegnato da ciascun task aiuta il project manager a valutare lo stato del progetto, confrontandolo con le stime fatte a preventivo.
+
+   \subsection{Progetti importanti}
+
+   \subsection{Premi e certificazioni}
+
+\section{Tecnologie utilizzate}
 L'azienda fa uso di un gran numero di tecnologie durante le proprie attività, di seguito analizzerò le più utilizzate.
 
    \subsection{Rackspace}
@@ -46,9 +74,9 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività, d
    \subsection{Git e Bitbucket}
    \begin{figure}[htbp]
       \centering
-      {\includegraphics[height=1.6cm,keepaspectratio]{immagini/git-logo} }
+      {\includegraphics[height=1.5cm,keepaspectratio]{immagini/git-logo} }
       \qquad
-      {\includegraphics[height=1.6cm,keepaspectratio]{immagini/bitbucket-logo} }
+      {\includegraphics[height=1.5cm,keepaspectratio]{immagini/bitbucket-logo} }
       \caption{Loghi di Git e Bitbucket}
    \end{figure}
    \nomeAzienda{} utilizza Git come CVS per il versionamento del codice: Git è in grado di gestire progetti anche molto complessi in modo efficiente; il suo sistema completamente distribuito permette di conservare copie sicure del prodotto in luoghi separati, garantendone la consistenza. Per facilitare la gestione del codice e automatizzare alcune attività, l'azienda ha scelto di utilizzare Bitbucket come hoster per le proprie repository. Bitbucket integra il servizio di pipeline, che permette di eseguire degli script in ambienti virtualizzati basati su Docker; in questo modo sono stati automatizzati i test di unità e integrazione e i controlli della quality assurance.
