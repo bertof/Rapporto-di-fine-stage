@@ -26,11 +26,11 @@ Con il crescere del team e l'acquisizione di nuovo personale più specializzato,
       \caption{Ciclo di vita di Scrum}
    \end{figure}
    
-   \engl{Scrum} definisce uno sprint come l'unità di misura dello sviluppo di un progetto, un periodo di tempo di lunghezza fissata generalmente tra una settimana e quattro settimane.
+   \engl{Scrum} definisce uno \engl{sprint} come l'unità di misura dello sviluppo di un progetto, un periodo di tempo di lunghezza fissata generalmente tra una settimana e quattro settimane.
    Le attività necessarie per l'avanzamento del progetto sono organizzate nel \engl{backlog} del prodotto.
-   Per ogni sprint il team pianifica quali task dovranno essere svolti e a chi andrà assegnato ciascuno di essi, definiendo così il \engl{backlog} dello sprint.
+   Per ogni \engl{sprint} il team pianifica quali \engl{task} dovranno essere svolti e a chi andrà assegnato ciascuno di essi, definiendo così il \engl{backlog} dello sprint.
    \\
-   Ogni giorno il team si ritrova con una breve riunione, detta ``\engl{daily scrum}'', per controllare lo stato dei task e degli obiettivi. I meeting giornalieri permettono al project manager di avere misure dello stato del progetto con più frequenza, rispetto ad altri modelli di sviluppo, così da intervenire più rapidamente alla necessità di correzioni.
+   Ogni giorno il team si ritrova con una breve riunione, detta ``\engl{daily scrum}'', per controllare lo stato dei \engl{task} e degli obiettivi. I \engl{meeting} giornalieri permettono al \gls{project manager} di avere misure dello stato del progetto con più frequenza, rispetto ad altri modelli di sviluppo, così da intervenire più rapidamente alla necessità di correzioni.
    \\
    Un vantaggio del modello \engl{Scrum}, e più in generale dei modelli agili, è quello di poter vedere il risultato del proprio lavoro più in fretta rispetto ai metodi tradizionali: i \engl{daily scrum} servono anche ad incentivare gli sviluppatori e a fornire loro una sensazione di progresso, che, invece, viene persa se i tempi tra un aggiornamento e l'altro si dilatano.
    \\
@@ -38,28 +38,29 @@ Con il crescere del team e l'acquisizione di nuovo personale più specializzato,
    \\
    Trattandosi di un modello \engl{Agile} la documentazione è molto più ridotta rispetto ai metodi tradizionali; nasce il concetto di user story, un documento che descrive le richieste del cliente e le decisioni prese assieme a quest'ultimo sul progetto durante incontro faccia a faccia. I vantaggio principale di questo tipo di documentazione è la snellezza dei documenti, sia quando devono essere consultati, sia quando devono essere scritti: avere una visione chiara di ciò che il cliente vuole può essere difficile se è necessario scorrere decine di pagine di verbali per ottenere tali informazioni; così, al contrario, è sufficiente controllare le ultime decisioni prese.
    \\
-   Il coordinamento del lavoro viene gestito tramite fogli di calcolo con funzioni automatiche, condivisi all'interno del team. Per ogni task è segnalato il livello di avanzamento, che deve essere aggiornato da colui a cui è stato assegnato, riportando il tempo impiegato ed eventuali note.
+   Il coordinamento del lavoro viene gestito tramite fogli di calcolo con funzioni automatiche, condivisi all'interno del team. Per ogni \engl{task} è segnalato il livello di avanzamento, che deve essere aggiornato da colui a cui è stato assegnato, riportando il tempo impiegato ed eventuali note.
    \\
-   Gli stati in cui un task si può trovare sono i seguenti:
+   Gli stati in cui un \engl{task} si può trovare sono i seguenti:
    \begin{itemize}
-      \item{\textbf{Analysis}: il task richiede analisi}
-      \item{\textbf{Pending}: il task è definito ed è in attesa di essere svolto}
-      \item{\textbf{Blocked}: il task è bloccato a causa delle sue dipendenze}
-      \item{\textbf{Development}: il task è in svolgimento}
+      \item{\textbf{Analysis}: il \engl{task} richiede analisi}
+      \item{\textbf{Pending}: il \engl{task} è definito ed è in attesa di essere svolto}
+      \item{\textbf{Blocked}: il \engl{task} è bloccato a causa delle sue dipendenze}
+      \item{\textbf{Development}: il \engl{task} è in svolgimento}
       \item{\textbf{Testing}: il prodotto è in fase di test}
       \item{\textbf{Reworking}: lo sviluppo è fallito e sta venendo rieseguito}
       \item{\textbf{Refactoring}: il codice prodotto è in fase di pulizia}
       \item{\textbf{Completed}: lo sviluppo è completato}
-      \item{\textbf{Confirmed}: il task è stato validato}
+      \item{\textbf{Confirmed}: il \engl{task} è stato validato}
    \end{itemize}
-   Il sistema di tracking del tempo impegnato da ciascun task aiuta il project manager a valutare lo stato del progetto, confrontandolo con le stime fatte a preventivo.
+   Il sistema di tracking del tempo impegnato da ciascun \engl{task} aiuta il project manager a valutare lo stato del progetto, confrontandolo con le stime fatte a preventivo.
 
    \subsection{Progetti importanti}
    %TODO: espandere sezione progetti importanti
+   %TODO: descrizione povera, aggiungere schema di funzionamento/immagine prodotto
    \paragraph{VisionHealthCare}
    \begin{figure}[H]
       \begin{center}
-         \includegraphics[width=6cm,height=3cm,keepaspectratio]{immagini/visionhealthcare-logo}
+g         \includegraphics[width=6cm,height=3cm,keepaspectratio]{immagini/visionhealthcare-logo}
       \end{center}
       \caption{Logo di VisionHealthCare}\label{logovisionhealthcare}
    \end{figure}
@@ -88,6 +89,13 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
    \end{figure}
    Rackspace è un cloud provider che offre servizi di managed cloud computing, basati su \gls{VPS} e altri servizi cloud, come \gls{AWS}, Microsoft Azure e OpenStack. Questo tipo di servizio permette di gestire facilmente servizi cloud utilizzati, mantenendo il pieno controllo di costi e infrastrutture, senza la necessità di conoscere a fondo ogni componente utilizzato. 
    \nomeAzienda{} usa Rackspace come hosting provider nel caso di progetti complessi, quando è necessaria una completa gestione delle risorse.
+   \begin{figure}[H]
+      \begin{center}
+      \includegraphics[width=14cm,keepaspectratio]{immagini/rackspace-network}
+      \end{center}
+      \caption{Schema di rete generale di un applicazione su Rackspace}
+   \end{figure}
+
 
    \subsection{Firebase}
    \begin{figure}[H]
