@@ -24,11 +24,12 @@ Con il crescere del team e l'acquisizione di nuovo personale più specializzato,
       \centering
       \includesvg[width=14cm]{immagini/scrum-process.svg}
       \caption{Ciclo di vita di Scrum}
+      \caption*{Source: Wikimedia Commons, Lakeworks, CC}
    \end{figure}
    
    \engl{Scrum} definisce uno \engl{sprint} come l'unità di misura dello sviluppo di un progetto, un periodo di tempo di lunghezza fissata generalmente tra una settimana e quattro settimane.
    Le attività necessarie per l'avanzamento del progetto sono organizzate nel \engl{backlog} del prodotto.
-   Per ogni \engl{sprint} il team pianifica quali \engl{task} dovranno essere svolti e a chi andrà assegnato ciascuno di essi, definiendo così il \engl{backlog} dello sprint.
+   Per ogni \engl{sprint} il team pianifica quali \engl{task} dovranno essere svolti e a chi andrà assegnato ciascuno di essi, definendo così il \engl{backlog} dello sprint.
    \\
    Ogni giorno il team si ritrova con una breve riunione, detta ``\engl{daily scrum}'', per controllare lo stato dei \engl{task} e degli obiettivi. I \engl{meeting} giornalieri permettono al \gls{project manager} di avere misure dello stato del progetto con più frequenza, rispetto ad altri modelli di sviluppo, così da intervenire più rapidamente alla necessità di correzioni.
    \\
@@ -55,8 +56,6 @@ Con il crescere del team e l'acquisizione di nuovo personale più specializzato,
    Il sistema di tracking del tempo impegnato da ciascun \engl{task} aiuta il project manager a valutare lo stato del progetto, confrontandolo con le stime fatte a preventivo.
 
    \subsection{Progetti importanti}
-   %TODO: espandere sezione progetti importanti
-   %TODO: descrizione povera, aggiungere schema di funzionamento/immagine prodotto
    \paragraph{VisionHealthCare}
    \begin{figure}[H]
       \begin{center}
@@ -72,9 +71,9 @@ Con il crescere del team e l'acquisizione di nuovo personale più specializzato,
       \caption{Schema di funzionamento di VisionHealthCare}\label{schemavisionhealthcare}
    \end{figure}
    I Google Glass si interfacciano con un'applicazione installata in uno smartphone e si collegano tramite questo ai servizi di OrmaWeb.
-   Gli occhiali permettono, durante l'operazione, di registrare, note vocali correlate da video e foto, utili alla documentazione dell'operazione. Il sistema permette di automatizzare buona parte delle procedure di verbalizzazione dell'intervento, trascivendo il testo registrato e aggiungendolo ai dati salvati su OrmaWeb. Un ulteriore utilizzo dei dati registrati è quello educativo: spesso l'unica persona in sala operatoria ad avere un buon punto di vista sull'operazione è il chirurgo che la sta praticando, ma questo non ha la possibilità di reggere una videocamera. Una soluzione di questo tipo permette di lavorare con le mani libere e allo stesso tempo di ricevere dati aggiuntivi sullo stato del paziente, come il suo battito cardiaco o la quantità di ossigeno nel sangue.
+   Gli occhiali permettono, durante l'operazione, di registrare, note vocali correlate da video e foto, utili alla documentazione dell'operazione. Il sistema permette di automatizzare buona parte delle procedure di verbalizzazione dell'intervento, trascrivendo il testo registrato e aggiungendolo ai dati salvati su OrmaWeb. Un ulteriore utilizzo dei dati registrati è quello educativo: spesso l'unica persona in sala operatoria ad avere un buon punto di vista sull'operazione è il chirurgo che la sta praticando, ma questo non ha la possibilità di reggere una videocamera. Una soluzione di questo tipo permette di lavorare con le mani libere e allo stesso tempo di ricevere dati aggiuntivi sullo stato del paziente, come il suo battito cardiaco o la quantità di ossigeno nel sangue.
 
-   \paragraph{Napkin Forever --- Paperworld 2017}
+   \paragraph{NapkinForever --- Paperworld 2017}
    \begin{figure}[H]
       \begin{center}
          \includegraphics[width=6cm,height=3cm,keepaspectratio]{immagini/paperworld-logo}
@@ -82,12 +81,16 @@ Con il crescere del team e l'acquisizione di nuovo personale più specializzato,
       \caption{Logo di Paperworld}\label{logopaperworld}
    \end{figure}
    \nomeAzienda{} sta collaborando con NapkinForever\footnote{Sito web di NapkinForever: \href{www.napkinforever.com}{www.napkinforever.com}}, azienda italiana di penne e stilo di design, per realizzare una presentazione virtuale dell'azienda per il Paperworld 2017, la più grande fiera al mondo di prodotti per gli uffici e strumenti di scrittura. Il progetto consiste in una simulazione realizzata tramite l'utilizzo dei Google Cardboard, gli occhiali per la realtà virtuale di Google, che accompagnerà i visitatori nel mondo del design di NapkinForever e presenterà loro i prodotti dell'azienda.
-   \\
-   %TODO: immagine google cardboard
-   I Google Cardboard consistono in un apparato di lenti, da applicare allo schermo di uno smartphone, e di un telaio in cartone. L'utilizzo di hardware comune e di materiali poveri permette di mantenere il prezzo del dispositivo molto basso rispetto ai competitor, pur fornendo una buona esperienza d'uso. La simuazione permetterà di visualizzare i prodotti proposti dall'azienda in scenografie ad hoc e di ottenere informazioni contestuali su di essi.
+   \begin{figure}[H]
+      \begin{center}
+         \includegraphics[width=15cm,height=5cm,keepaspectratio]{immagini/cardboard-schema}
+      \end{center}
+      \caption{Schema di funzionamento di Google Cardboard}\label{schemacardboard}
+   \end{figure}
+   I Google Cardboard consistono in un apparato di lenti, da applicare allo schermo di uno smartphone, e di un telaio in cartone. L'utilizzo di hardware comune e di materiali poveri permette di mantenere il prezzo del dispositivo molto basso rispetto ai competitor, pur fornendo una buona esperienza d'uso. La simulazione permetterà di visualizzare i prodotti proposti dall'azienda in scenografie ad hoc e di ottenere informazioni contestuali su di essi.
 
    \subsection{Premi e certificazioni}
-   %TODO: espandere sezione premi e certificazioni
+
    \paragraph{Unicredit Start Lab}
    \begin{figure}[H]
       \begin{center}
@@ -137,20 +140,34 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
    Java è un linguaggio di programmazione ad alto livello orientato agli oggetti pensato per essere il più possibile indipendente dalla piattaforma sulla quale viene eseguito. Java supera questo ostacolo utilizzano una macchina virtuale, la JVM, che permette di astrarre il sistema sottostante. Il vantaggio di Java sui linguaggi compilati tradizionali è proprio quello di poter essere eseguito su una qualsiasi piattaforma, a patto che esista una JVM per questa. Tra le tecnologie utilizzate da \nomeAzienda{} troviamo Android, fortemente basato su Java, e utilizzato per la creazione di applicazioni per dispositivi mobile. Molti dei progetti passati dell'azienda sono legati ad applicazioni Android, ma \nomeAzienda{} utilizza Java anche nel caso di servizi web ad alto parallelismo.
 
    \subsection{Git e Bitbucket}
-   \begin{figure}[H]
+   \begin{figure}[htbp]
       \begin{center}
          \includegraphics[width=6cm,height=2cm,keepaspectratio]{immagini/git-logo}
       \end{center}
       \caption{Logo di Git}\label{logogit}
    \end{figure}
-   \begin{figure}[H]
+   \begin{figure}[htbp]
       \begin{center}
          \includegraphics[width=6cm,height=3cm,keepaspectratio]{immagini/bitbucket-logo}
       \end{center}
       \caption{Logo di Bitbucket}\label{logobitbucket}
    \end{figure}
    \nomeAzienda{} utilizza Git come \gls{CVS} per il versionamento del codice: Git è in grado di gestire progetti anche molto complessi in modo efficiente. Il suo sistema completamente distribuito permette a due persone di lavorare contemporaneamente sullo stesso file, senza necessità di una connessione di rete, e di conservare copie sicure del prodotto in luoghi separati, pur garantendone la consistenza.\\
-   Per facilitare la gestione del codice e automatizzare alcune attività, l'azienda ha scelto di utilizzare Bitbucket come hoster per le proprie repository. Bitbucket integra il servizio di pipeline, che permette di eseguire degli script in ambienti virtualizzati basati su Docker; in questo modo sono stati automatizzati i test di unità e integrazione e i controlli della quality assurance. È possibile utilizzare questo sistema anche per automatizzare le attività di deployment, come nella strategia del continuous deployment.
+   \begin{figure}[htbp]
+      \begin{center}
+         \includegraphics[width=15cm,height=3cm,keepaspectratio]{immagini/git-branches}
+      \end{center}
+      \caption{Esempio di grafo di lavoro in Git}\label{grafogit}
+      \caption*{Source: Wikimedia Commons, Bunyk, CC}
+   \end{figure}
+   Per facilitare la gestione del codice e automatizzare alcune attività, l'azienda ha scelto di utilizzare Bitbucket come hoster per le proprie repository. Bitbucket integra il servizio di pipeline, che permette di eseguire degli script in ambienti virtualizzati basati su Docker; in questo modo sono stati automatizzati i test di unità e integrazione e i controlli della quality assurance. Questo tipo di operazioni fanno risparmiare tempo, dato che non necessitano dell'intervento umano, inoltre la garanzia che ogni commit al repository è stato testato conferisce la sicurezza di poter rilasciare una nuova versione senza riserbo.
+   \begin{figure}[H]
+      \begin{center}
+         \includegraphics[width=15cm,height=6cm,keepaspectratio]{immagini/bitbucket-pipeline}
+      \end{center}
+      \caption{Schema generale di una pipeline in Bitbucket}\label{pipelinebitbucket}
+   \end{figure}
+
 
    \subsection{G Suite}
    \begin{figure}[H]
@@ -171,8 +188,9 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
    WordPress è una piattaforma editoriale personale; nato per gestire semplici blog, viene utilizzato come piattaforma di sviluppo di siti molto più complessi, sfruttando il sistema a plugin su cui e basato. L'utilizzo di WordPress come base di un sito permette di iniziare a lavorare con un framework riutilizzabile, stabile e aggiornato che gestisce i contenuti e i dati del sito, permettendo allo sviluppatore di concentrarsi sulla loro presentazione all'utente.
    \nomeAzienda{} sfrutta WordPress come framework dei propri siti anche per rendere la modifica dei contenuti semplice al proprio cliente.
 
-\section{Corsa all'innovazione}
+\section{Rapporto con l'innovazione}
 %TODO: Rapporto con l'innovazione (si cerca l'innovazione o si lavora su solo quello che serve)
+%TODO: chiedere come migliorare la sezione
 \nomeAzienda{} è da sempre alla continua ricerca di nuove tecnologie da conoscere ed integrare nei propri prodotti, anche in campi sperimentali, come i dispositivi \gls{wearable}, \gls{IoT} e la realtà aumentata. Proprio questi ultimi hanno dato origine ad alcuni dei progetti più all'avanguardia dell'azienda e l'hanno spinta all'acquisizione di personale dedito alla sperimentazione di nuove soluzioni.
 \\
 Un'ulteriore necessità di innovazione deriva dal settore nel quale \nomeAzienda{} si propone: il mercato è in rapida crescita e questo impone un continuo aggiornamento delle conoscenze e delle tecniche per mantenere i propri prodotti validi e restare al passo con i competitor.
