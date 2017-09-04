@@ -55,10 +55,10 @@
                         - Relay streaming
                         - Codifica al volo
             4. Trasmissione dei contenuti in mobilità
-                  1. Difficoltà della trasmissione in mobilità 
-                  2. Reti 
-                        - WiFi 
-                        - Bluetooth 
+                  1. Difficoltà della trasmissione in mobilità
+                  2. Reti
+                        - WiFi
+                        - Bluetooth
                         - Rete 4G
       2. Analisi dei requisiti
             1. Analisi preliminare
@@ -102,7 +102,7 @@
       6. Qualifica
             1. Verifica
                   1. Analisi statica
-                  2. Analisi dinamica      
+                  2. Analisi dinamica
             2. Validazione
                   1. Validazione interna
                   2. Validazione esterna
