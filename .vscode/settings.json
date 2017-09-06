@@ -1,4 +1,7 @@
 // Inserire le impostazioni in questo file per sovrascrivere quelle utente e predefinite.
 {
-     "latex-workshop.latex.clean.enabled": false
+     "latex-workshop.latex.clean.enabled": true,
+     "TodoParser": {
+      "include": ["tex"]
+     }
 }
