@@ -10,15 +10,21 @@
    %TODO: Spiegazione più completa dell'architettura (nel testo)
    %TODO: Evidenziazione di quali componenti sono parte dello stage e quali esistono già
    \nomeAzienda{} sta sviluppando un sistema di videoconferenza per assistenza remota da applicare ai lavori specialistici e all'interno di aziende manifatturiere. Il sistema è pensato per aiutare un lavoratore inesperto, in situazioni difficili, facendolo guidare da una persona con le conoscenze adeguate a svolgere tali mansioni. Per rendere l'esperienza pratica funzionale, l'azienda ha pensato di utilizzare dei visori per la realtà aumentata, concentrandosi particolarmente sui Google Glass. L'utente esperto dovrà essere in grado di vedere in tempo reale quello che l'altro vede, tramite una videocamera integrata negli occhiali, e di mostrargli dati ed indicazioni su quello che deve fare, tramite il display integrato.
-   \\
-   \nomeAzienda{} ha già realizzato un prototipo di client Android del servizio e, dopo test di trasmissione interni al dispositivo, si sta preparando per il passaggio alla comunicazione su una rete locale, tramite una piattaforma di \engl{streaming} \engl{\gls{real-time}} proprietaria.
    \begin{figure}[H]
       \begin{center}
          \includegraphics[width=16.5cm,keepaspectratio]{immagini/erastreaming-schema}
       \end{center}         
       \caption{Schema generale del funzionamento della piattaforma di streaming}
    \end{figure}
-   Il progetto del tirocinio proposto da \nomeAzienda{} consiste nella realizzazione del sistema di gestione e ritrasmissione di messaggi da utilizzare per la comunicazione tra i client del servizio.
+   \nomeAzienda{} ha già realizzato un prototipo di client Android del servizio e, dopo test di trasmissione interni al dispositivo, si sta preparando per il passaggio alla comunicazione tra due dispositivi connessi ad una rete locale. 
+   L'obietivo dello stage è quello di sviluppare il software necessario a far comunicare i due dispositivi tramite un terzo elemento, un server di relay, che si occuperà di consegnare i messaggi inviati tra i client connessi e ne gestirà le trasmissioni tramite canali. Si deve inoltre predisporre la gestione di utenti e canali da parte di un servizio amministratore, non ancora sviluppato.
+   \begin{figure}[H]
+      \begin{center}
+         \includegraphics[width=12cm,keepaspectratio]{immagini/erastreaming-schema-attuale}
+      \end{center}         
+      \caption{Schema delle componenti in fase di sviluppo}
+   \end{figure}
+
 
    \subsection{Risultati degli stage precedenti e seguito degli stagisti nell'azienda}
    \nomeAzienda{} ha deciso anche quest'anno di partecipare all'evento ``StageIt'', organizzato da Confindustria Padova in collaborazione con l'Università degli Studi di Padova, e di proporre agli studenti un tirocinio interno all'azienda. L'impresa è alla ricerca di neolaureati per arricchire il proprio team di sviluppatori, dato il recente aumento di clienti e la conseguente espansione. 
