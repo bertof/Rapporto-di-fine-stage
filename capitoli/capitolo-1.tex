@@ -102,40 +102,36 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
       \end{center}
       \caption{Schema di rete generale di un'applicazione su Rackspace}
    \end{figure}
-
+   Rackspace permette di gestire in modo semplice nodi per il load balancing e la ridondanza dei servizi. In questo modo è possibile garantire up-time estremamente elevati e distribuire gli aggiornamenti sui singoli nodi, senza mai fermare il servizio completamente.
 
    \subsection{Firebase}
+   Firebase è una piattaforma di sviluppo per applicazioni Web e mobile, parte di Google Cloud Platform; fornisce servizi di scambio di messaggi e basi di dati in tempo reale, spazio di archiviazione, sistemi di autenticazione, web hosting e test automatici per applicazioni Android. La piattaforma fornisce anche un servizio di analisi e profilazione degli utenti e l'integrazione con il sistema di annunci pubblicitari di Google, AdMob.
+   Il caso d'uso principale di Firebase è quello di base di dati per la sincronizzazione di dati tra dispositivi, anche su piattaforme diverse, in tempi molto ridotti. A differenza di un database non relazionale comune, il servizio che Firebase offre si basa su una CDN molto estesa, che permette di ridurre i tempi di attesa per la sincronizzazione dei dati.
    \begin{figure}[H]
       \begin{center}
-         \includegraphics[width=6cm,height=3cm,keepaspectratio]{immagini/firebase-logo}
+         \includegraphics[width=14cm,keepaspectratio]{immagini/firebase-usecase}      
       \end{center}
-      \caption{Logo di Firebase}\label{logofirebase}
+      \caption{Usecase generale di Firebase}
    \end{figure}
-   Firebase è una piattaforma di sviluppo per applicazioni Web e mobile, parte di Google Cloud Platform; fornisce servizi di scambio di messaggi e basi di dati in tempo reale, spazio di archiviazione, sistemi di autenticazione, web hosting e test automatici per applicazioni Android. La piattaforma fornisce anche un servizio di analisi e profilazione degli utenti e l'integrazione con il sistema di annunci pubblicitari di Google, AdMob.
    \nomeAzienda{} utilizza Firebase quando necessita della creazione di un ambiente di sviluppo completo, veloce e facile da manutenere.
 
    \subsection{Java}
+   Java è un linguaggio di programmazione ad alto livello orientato agli oggetti pensato per essere il più possibile indipendente dalla piattaforma sulla quale viene eseguito. Java supera questo ostacolo utilizzano una macchina virtuale, la JVM, che permette di astrarre il sistema sottostante. Il vantaggio di Java sui linguaggi compilati tradizionali è proprio quello di poter essere eseguito su una qualsiasi piattaforma, a patto che esista una JVM per questa. 
    \begin{figure}[H]
       \begin{center}
-         \includegraphics[width=6cm,height=3cm,keepaspectratio]{immagini/java-logo}      
+         \includegraphics[width=14cm,height=6.5cm,keepaspectratio]{immagini/java-architecture}      
       \end{center}
-      \caption{Logo di Java}\label{logojava}
+      \caption{Architettura di Java}
    \end{figure}
-   Java è un linguaggio di programmazione ad alto livello orientato agli oggetti pensato per essere il più possibile indipendente dalla piattaforma sulla quale viene eseguito. Java supera questo ostacolo utilizzano una macchina virtuale, la JVM, che permette di astrarre il sistema sottostante. Il vantaggio di Java sui linguaggi compilati tradizionali è proprio quello di poter essere eseguito su una qualsiasi piattaforma, a patto che esista una JVM per questa. Tra le tecnologie utilizzate da \nomeAzienda{} troviamo Android, fortemente basato su Java, e utilizzato per la creazione di applicazioni per dispositivi mobile. Molti dei progetti passati dell'azienda sono legati ad applicazioni Android, ma \nomeAzienda{} utilizza Java anche nel caso di servizi web ad alto parallelismo.
+   Tra le tecnologie utilizzate da \nomeAzienda{} troviamo Android, fortemente basato su Java, e utilizzato per la creazione di applicazioni per dispositivi mobile. Molti dei progetti passati dell'azienda sono legati ad applicazioni Android, ma \nomeAzienda{} utilizza Java anche nel caso di servizi web ad alto parallelismo.
+   \begin{figure}[H]
+      \begin{center}
+         \includegraphics[width=14cm,height=18cm,keepaspectratio]{immagini/android-stack}
+      \end{center}
+      \caption{Architettura di Android. Source: \href{https://developer.android.com/guide/platform/index.html}{Documentazione Android Developers}}
+   \end{figure}
 
    \subsection{Git e Bitbucket}
-   \begin{figure}[htbp]
-      \begin{center}
-         \includegraphics[width=6cm,height=2cm,keepaspectratio]{immagini/git-logo}
-      \end{center}
-      \caption{Logo di Git}\label{logogit}
-   \end{figure}
-   \begin{figure}[htbp]
-      \begin{center}
-         \includegraphics[width=6cm,height=3cm,keepaspectratio]{immagini/bitbucket-logo}
-      \end{center}
-      \caption{Logo di Bitbucket}\label{logobitbucket}
-   \end{figure}
    \nomeAzienda{} utilizza Git come \gls{CVS} per il versionamento del codice: Git è in grado di gestire progetti anche molto complessi in modo efficiente. Il suo sistema completamente distribuito permette a due persone di lavorare contemporaneamente sullo stesso file, senza necessità di una connessione di rete, e di conservare copie sicure del prodotto in luoghi separati, pur garantendone la consistenza.\\
    \begin{figure}[htbp]
       \begin{center}
@@ -150,24 +146,22 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
       \end{center}
       \caption{Schema generale di una pipeline in Bitbucket}\label{pipelinebitbucket}
    \end{figure}
+   La configurazione tipica di una pipeline su Bitbucket segue il seguente iter:
+   \begin{enumerate}
+      \item{Uno sviluppatore carica sul server Bitbucket del codice, tramite un push di Git;}
+      \item{Il server Bitbucket carica il codice in un contenitore docker, secondo la configurazione del repository;}
+      \item{Il contenitore esegue la configurazione dell'applicazione e lancia tutti i test, restituendone i risultati al server;}
+      \item{Se i test vengono superati il commit viene ritenuto valido, altrimenti può essere scartato;}
+      \item{Se il codice è stato caricato su un ramo di release, il nuovo commit viene caricato su un nuovo contenitore docker, che si occuperà della creazione di una build del prodotto;}
+      \item{Lo stesso docker può essere configurato in modo tale da caricare il prodotto compilato sui server di produzione, oppure avvisare un certo gruppo di persone di eseguire ulteriori test sulla build ottenuta.}
+   \end{enumerate}
+   In caso di fallimento di uno dei task della pipeline, lo sviluppatore che ha caricato il codice viene avvisato degli errori e gli vengono forniti i log delle operazioni eseguite.
 
 
    \subsection{G Suite}
-   \begin{figure}[H]
-      \begin{center}
-         \includegraphics[width=6cm,height=2cm,keepaspectratio]{immagini/gsuite-logo}
-      \end{center}
-      \caption{Logo di G Suite}\label{logogsuite}
-   \end{figure}
    G Suite, la soluzione per l'ufficio di Google, offre una gestione completa di mail commerciali, editor di testo, fogli di calcolo, calendario e archivio di dati. \nomeAzienda{} usa questo servizio per le proprie attività, soprattutto per il vantaggio di poter accedere ai dati salvati anche in mobilità, con la massima comodità.
 
    \subsection{WordPress}
-   \begin{figure}[H]
-      \begin{center}
-         \includegraphics[width=6cm,height=3cm,keepaspectratio]{immagini/wordpress-logo}
-      \end{center}
-      \caption{Logo di WordPress}\label{logowordpress}
-   \end{figure}
    WordPress è \gls{CMS} open-source che offre una piattaforma editoriale personale; nato per gestire semplici blog, viene utilizzato come framework di sviluppo di siti molto più complessi, sfruttando il sistema a plugin su cui e basato. L'utilizzo di WordPress come base di un sito permette di iniziare a lavorare con un framework riutilizzabile, stabile e aggiornato che ne gestisce i contenuti e i dati, permettendo allo sviluppatore di concentrarsi sulla loro presentazione all'utente.
    \nomeAzienda{} sfrutta WordPress come base dei propri siti anche per rendere la modifica dei contenuti semplice al proprio cliente.
 

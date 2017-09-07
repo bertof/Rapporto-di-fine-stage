@@ -1,0 +1,11 @@
+immagini/* filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.svg filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+immagini/java-architecture.svg filter=lfs diff=lfs merge=lfs -text
+immagini/android-stack.png filter=lfs diff=lfs merge=lfs -text
+immagini/firebase-usecase.png filter=lfs diff=lfs merge=lfs -text
+immagini/firebase-usecase.svg filter=lfs diff=lfs merge=lfs -text
+immagini/java-architecture.png filter=lfs diff=lfs merge=lfs -text
+tesi.pdf filter=lfs diff=lfs merge=lfs -text
