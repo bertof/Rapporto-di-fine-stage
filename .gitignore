@@ -1,3 +1,4 @@
+Switch to LFS
 
 # Created by https://www.gitignore.io/api/osx,vim,macos,linux,latex,windows,sublimetext,visualstudiocode
 
@@ -350,3 +351,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/osx,vim,macos,linux,latex,windows,sublimetext,visualstudiocode
+
+tesi.pdf

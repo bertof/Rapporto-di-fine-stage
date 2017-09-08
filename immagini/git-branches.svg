@@ -1,3 +1,416 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:182dca310eeca60b90c80f5678e90c1f4d21a71719a839e67da90688cb7cd846
-size 12833
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:se="http://svg-edit.googlecode.com"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="455.66797"
+   height="144.97656"
+   version="1.1"
+   id="svg60"
+   sodipodi:docname="git-branches.svg"
+   inkscape:export-filename="/home/bertof/Documenti/Tesi di laurea/immagini/git-branches.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <metadata
+     id="metadata64">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1025"
+     id="namedview62"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.692"
+     inkscape:cx="145.77719"
+     inkscape:cy="163.41612"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg60" />
+  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+  <defs
+     id="defs24">
+    <marker
+       id="se_marker_end_svg_12"
+       markerUnits="strokeWidth"
+       orient="auto"
+       viewBox="0 0 100 100"
+       markerWidth="5"
+       markerHeight="5"
+       refX="50"
+       refY="50">
+      <path
+         id="svg_1"
+         d="M 100,50 0,90 30,50 0,10 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+    <marker
+       id="se_marker_end_svg_13"
+       markerUnits="strokeWidth"
+       orient="auto"
+       viewBox="0 0 100 100"
+       markerWidth="5"
+       markerHeight="5"
+       refX="50"
+       refY="50">
+      <path
+         id="svg_21"
+         d="M 100,50 0,90 30,50 0,10 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+    <marker
+       id="se_marker_end_svg_14"
+       markerUnits="strokeWidth"
+       orient="auto"
+       viewBox="0 0 100 100"
+       markerWidth="5"
+       markerHeight="5"
+       refX="50"
+       refY="50">
+      <path
+         id="svg_22"
+         d="M 100,50 0,90 30,50 0,10 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+    <marker
+       id="se_marker_start_svg_15"
+       markerUnits="strokeWidth"
+       orient="auto"
+       viewBox="0 0 100 100"
+       markerWidth="5"
+       markerHeight="5"
+       refX="50"
+       refY="50">
+      <path
+         id="svg_23"
+         d="M 0,50 100,90 70,50 100,10 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+    <marker
+       id="se_marker_start_svg_16"
+       markerUnits="strokeWidth"
+       orient="auto"
+       viewBox="0 0 100 100"
+       markerWidth="5"
+       markerHeight="5"
+       refX="50"
+       refY="50">
+      <path
+         id="svg_24"
+         d="M 0,50 100,90 70,50 100,10 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+    <marker
+       id="se_marker_start_svg_17"
+       markerUnits="strokeWidth"
+       orient="auto"
+       viewBox="0 0 100 100"
+       markerWidth="5"
+       markerHeight="5"
+       refX="50"
+       refY="50">
+      <path
+         id="svg_25"
+         d="M 0,50 100,90 70,50 100,10 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+    <marker
+       id="se_marker_start_svg_18"
+       markerUnits="strokeWidth"
+       orient="auto"
+       viewBox="0 0 100 100"
+       markerWidth="5"
+       markerHeight="5"
+       refX="50"
+       refY="50">
+      <path
+         id="svg_26"
+         d="M 0,50 100,90 70,50 100,10 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+    <marker
+       id="se_marker_start_svg_19"
+       markerUnits="strokeWidth"
+       orient="auto"
+       viewBox="0 0 100 100"
+       markerWidth="5"
+       markerHeight="5"
+       refX="50"
+       refY="50">
+      <path
+         id="svg_27"
+         d="M 0,50 100,90 70,50 100,10 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+    <marker
+       refY="50"
+       refX="50"
+       markerHeight="5"
+       markerWidth="5"
+       viewBox="0 0 100 100"
+       se_type="leftarrow"
+       orient="auto"
+       markerUnits="strokeWidth"
+       id="se_marker_start_svg_36">
+      <path
+         d="M 0,50 100,90 70,50 100,10 Z"
+         id="path18"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+    <marker
+       refY="50"
+       refX="50"
+       markerHeight="5"
+       markerWidth="5"
+       viewBox="0 0 100 100"
+       se_type="leftarrow"
+       orient="auto"
+       markerUnits="strokeWidth"
+       id="se_marker_start_svg_37">
+      <path
+         d="M 0,50 100,90 70,50 100,10 Z"
+         id="path21"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:10" />
+    </marker>
+  </defs>
+  <g
+     id="g58"
+     transform="translate(-25.5,-27.1875)">
+    <title
+       id="title26">Layer 1</title>
+    <polyline
+       se:connector="svg_7 svg_35"
+       points="296.5,75.1413 345.25,96.337 394,117.533"
+       id="svg_37"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-start:url(#se_marker_start_svg_37)" />
+    <polyline
+       se:connector="svg_11 svg_35"
+       points="358,122.75 376,122.75 394,122.75"
+       id="svg_36"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-start:url(#se_marker_start_svg_36)" />
+    <polyline
+       se:connector="svg_10 svg_11"
+       id="svg_19"
+       points="300,122.75 314.5,122.75 329,122.75"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-start:url(#se_marker_start_svg_19)" />
+    <polyline
+       se:connector="svg_9 svg_10"
+       id="svg_18"
+       points="238.5,122.75 254.75,122.75 271,122.75"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-start:url(#se_marker_start_svg_18)" />
+    <polyline
+       se:connector="svg_8 svg_9"
+       id="svg_17"
+       points="177.5,122.75 193.5,122.75 209.5,122.75"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-start:url(#se_marker_start_svg_17)" />
+    <polyline
+       se:connector="svg_4 svg_8"
+       id="svg_16"
+       points="116,82.9533 132.25,97.4858 148.5,112.018"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-start:url(#se_marker_start_svg_16)" />
+    <polyline
+       se:connector="svg_6 svg_7"
+       id="svg_15"
+       points="238.5,67.75 253,67.75 267.5,67.75"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-start:url(#se_marker_start_svg_15)" />
+    <polyline
+       se:connector="svg_6 svg_5"
+       id="svg_14"
+       points="209.5,67.75 193.25,67.75 177,67.75"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-end:url(#se_marker_end_svg_14)" />
+    <polyline
+       se:connector="svg_5 svg_4"
+       id="svg_13"
+       points="148,67.75 132,67.75 116,67.75"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-end:url(#se_marker_end_svg_13)" />
+    <polyline
+       se:connector="svg_4 svg_2"
+       id="svg_12"
+       points="87,67.75 70.75,67.75 54.5,67.75"
+       style="fill:none;stroke:#000000;stroke-width:2;marker-end:url(#se_marker_end_svg_12)" />
+    <circle
+       cx="37.5"
+       cy="67.75"
+       id="svg_2"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <ellipse
+       cx="100.5"
+       cy="203.5"
+       id="svg_3"
+       rx="1"
+       ry="0"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <circle
+       cx="99"
+       cy="67.75"
+       id="svg_4"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <circle
+       cx="160"
+       cy="67.75"
+       id="svg_5"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <circle
+       cx="221.5"
+       cy="67.75"
+       id="svg_6"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <circle
+       cx="279.5"
+       cy="67.75"
+       id="svg_7"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <circle
+       cx="160.5"
+       cy="122.75"
+       id="svg_8"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <circle
+       cx="221.5"
+       cy="122.75"
+       id="svg_9"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <circle
+       cx="283"
+       cy="122.75"
+       id="svg_10"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <circle
+       cx="341"
+       cy="122.75"
+       id="svg_11"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <text
+       stroke-linejoin="null"
+       stroke-linecap="null"
+       x="101"
+       y="45"
+       id="svg_20"
+       font-size="24"
+       xml:space="preserve"
+       style="font-size:24px;font-family:'sans serif';text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none">A</text>
+    <text
+       id="svg_28"
+       stroke-linejoin="null"
+       stroke-linecap="null"
+       x="160"
+       y="45"
+       font-size="24"
+       xml:space="preserve"
+       style="font-size:24px;font-family:'sans serif';text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none">B</text>
+    <text
+       style="font-size:24px;font-family:'sans serif';text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="svg_29"
+       stroke-linejoin="null"
+       stroke-linecap="null"
+       x="224"
+       y="45"
+       font-size="24"
+       xml:space="preserve">C</text>
+    <text
+       id="svg_30"
+       stroke-linejoin="null"
+       stroke-linecap="null"
+       x="278"
+       y="45"
+       font-size="24"
+       xml:space="preserve"
+       style="font-size:24px;font-family:'sans serif';text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none">D</text>
+    <text
+       style="font-size:24px;font-family:'sans serif';text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="svg_31"
+       stroke-linejoin="null"
+       stroke-linecap="null"
+       x="160"
+       y="169"
+       font-size="24"
+       xml:space="preserve">W</text>
+    <text
+       style="font-size:24px;font-family:'sans serif';text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="svg_32"
+       stroke-linejoin="null"
+       stroke-linecap="null"
+       x="225"
+       y="169"
+       font-size="24"
+       xml:space="preserve">X</text>
+    <text
+       style="font-size:24px;font-family:'sans serif';text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none"
+       id="svg_33"
+       stroke-linejoin="null"
+       stroke-linecap="null"
+       x="287"
+       y="169"
+       font-size="24"
+       xml:space="preserve">Y</text>
+    <text
+       id="svg_34"
+       stroke-linejoin="null"
+       stroke-linecap="null"
+       x="339"
+       y="169"
+       font-size="24"
+       xml:space="preserve"
+       style="font-size:24px;font-family:'sans serif';text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none">Z</text>
+    <circle
+       id="svg_35"
+       cx="406"
+       cy="122.75"
+       r="11"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2" />
+    <text
+       id="svg_38"
+       stroke-linejoin="null"
+       stroke-linecap="null"
+       x="431"
+       y="169"
+       font-size="24"
+       xml:space="preserve"
+       style="font-size:24px;font-family:'sans serif';text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none">Z' (Z+D)</text>
+  </g>
+</svg>

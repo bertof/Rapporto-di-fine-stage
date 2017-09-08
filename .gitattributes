@@ -6,7 +6,6 @@ immagini/* filter=lfs diff=lfs merge=lfs -text
 immagini/android-stack.png filter=lfs diff=lfs merge=lfs -text
 immagini/firebase-usecase.png filter=lfs diff=lfs merge=lfs -text
 immagini/java-architecture.png filter=lfs diff=lfs merge=lfs -text
-tesi.pdf filter=lfs diff=lfs merge=lfs -text
 immagini/erastreaming-schema-attuale.png filter=lfs diff=lfs merge=lfs -text
 immagini/git-branches.png filter=lfs diff=lfs merge=lfs -text
 immagini/template-hierarchy.png filter=lfs diff=lfs merge=lfs -text
