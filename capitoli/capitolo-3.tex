@@ -4,14 +4,27 @@
 \chapter{Il prodotto\label{cap:ilprodotto}}
 \section{Acquisizione delle conoscenze settoriali}
    \subsection{Codifica video}
+      %Definizione di codifica video
+      %Definizione di codec
       \subsubsection{Storia della codifica video}
-
+      %primi standard di codifica video
+      %cambiamenti
       \subsubsection{Formati comunemente usati}
-      % Pregi, difetti e applicabilità
+         \paragraph{M-JPEG}
+         Motion JPEG  è un codec video che comprime ogni frame del video originale in una immagine in formato JPEG, un comune formato di compressione con perdita per immagini digitali. Originariamente creato per applicazioni multimediali, M-JPEG è attualmente utilizzado da dispositivi di videoregistazione come camere digitali, IP cam e webcam.
+         \\
+         Un grande vantaggio dell'utilizzo di M-JPEG per la codifica video, che ha spinto la sua diffusione sulla maggior parte delle prime fotocamere digitali non professionali, è quello della bassa potenza di calcolo neessaria al suo utilizzo: è sufficiente una modifica software all'encoder hardware per JPEG per poter creare un codec M-JPEG.\@ Inoltre, permette la lettura non lineare del file, utile nel caso di sistemi di video editing. Inoltre l'encoding intraframe che sfrutta limita l'informazione contenuta in ciascun frame M-JPEG a quella di un frame del video originale, permettendo di cambiare velocemente il contenuto, senza considerare i frame precedenti o successivi, come invece accade nelle codifiche iterframe come H.264/MPEG-4 AVC.\@
+         \\
+         Con l'accrescere della potenza di calcolo, M-JPEG  è stato soppiantato da MPEG-4, per la resa qualitativamente molto migliore a parità di bitrate, infatti JPEG è inefficente nello spazio di archiviazione. Inoltre M-JPEG non sfrutta tecniche di predizione spaziale, come H.264/MPEG-4 AVC, che permetterebbero un ulteriore risparmio di spazio, a discapito di una maggiore potenza di calcolo necessaria.
+
+         \paragraph{MPEG-1}
+         MPEG-1 è uno standard per la compressione con perdita di video e audio progettato per comprimere video con la qualità variabile tra il video di una \gls{VHS} e l'audio di un CD fino a 1.5Mbit/s senza peridta di qualità eccessive, permetendo la creazione di video CD, trasmissioni tv via satellite e via cavo e \gls{DAB}. Attualmente, MPEG-1 è il formato lossy con più supporto di compatibilità al mondo e uno degli standard che ha introdotto più noti è stato il formato audio MP3.
+
+
 
    \subsection{Protocolli}
       \subsubsection{Storia dei protocolli e standardizzazione}
-
+         
       \subsubsection{Differenza tra protocolli real-time e on-demand}
 
       \subsubsection{Problemi dell'UDP con i firewall}
