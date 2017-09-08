@@ -1,12 +1,101 @@
 %**************************************************************
-% Capitolo 2 - Descrizione dello stage
+% Capitolo 2 - COSA-COME - Il prodotto dello stage
 %**************************************************************
-\chapter{Descrizione dello stage\label{cap:descrizionestage}}
-\section{Scopo dello stage}
+\chapter{Il prodotto\label{cap:ilprodotto}}
+\section{Acquisizione delle conoscenze settoriali}
+   \subsection{Codifica video}
+      \subsubsection{Storia della codifica video}
 
-Lo scopo di questo stage è quello di studiare gli attuali metodi di trasmissione di video, in tempo reale e on demand, e di sviluppare un applicativo server in grado di gestire la ritrasmissione di messaggi tra i client connessi.
+      \subsubsection{Formati comunemente usati}
+      % Pregi, difetti e applicabilità
 
-\section{Analisi preventiva dei rischi}
+   \subsection{Protocolli}
+      \subsubsection{Storia dei protocolli e standardizzazione}
 
+      \subsubsection{Differenza tra protocolli real-time e on-demand}
 
-\section{Pianificazione}
+      \subsubsection{Problemi dell'UDP con i firewall}
+
+      \subsubsection{WebRTC}
+
+   \subsection{Architettura di una piattaforma di streaming}
+      \subsubsection{Struttura di massima}
+
+      \subsubsection{Inbound}
+         \paragraph{Streaming}
+
+         \paragraph{Upload di file}
+
+      \subsubsection{Storage}
+         \paragraph{Sistemi elastici}
+
+         \paragraph{Organizzazione dei contenuti}
+
+      \subsubsection{Outbound}
+         \paragraph{Standard e reti}
+
+         \paragraph{CDN}
+
+         \paragraph{Relay streaming}
+
+         \paragraph{Codifica al volo}
+
+   \subsection{Trasmissione dei contenuti in mobilità}
+      \subsubsection{Difficoltà della trasmissione in mobilità}
+
+      \subsubsection{Reti}
+         \paragraph{Rete 4G}   
+         \paragraph{WiFi}
+         \paragraph{Bluetooth}
+
+\section{Analisi dei requisiti}
+   \subsection{Analisi preliminare}
+      %Definizione dei requisiti
+   
+   \subsection{Definizione dei casi d'uso}
+      %Diagramma UML
+   
+\section{Struttura della piattaforma}
+   \subsection{Diagramma strutturale}
+      %Diagramma UML
+      %Spiegazione della funzione delle compnenti
+
+   \subsection{Confronto con soluzioni esistenti}
+      \subsubsection{YouTube}
+      \subsubsection{Red5 Pro}
+      \subsubsection{Contus Vplay}
+      \subsubsection{Streamroot}
+      \subsubsection{Wowza Streaming Engine}
+
+\section{Tecnologie utilizzate}
+   \subsection{Linguaggi --- Java}
+      %Integrazione facile con Android
+   
+   \subsection{Piattaforma --- Tomcat8 EE}
+
+   \subsection{Protocollo --- TCP su WebSocket}
+
+   \subsection{Tipo di dati scambiati --- JSON vs XML}
+      %Meno prolisso
+      %Scelto per semplificare la codifica della piattaforma
+      %Facile a comprendere
+   \subsection{Strumetni di supporto}
+      \subsubsection{Strumenti di versionamento}
+         %Git e Bitbucket
+      \subsubsection{Strumenti di test e verifica}
+         %JUnit
+      \subsubsection{Strumenti di analisi di rete}
+         %Wireshark
+      \subsubsection{Strumenti di continuous integration}
+         %Docker
+\section{Nuovi orizzonti}
+   \subsection{Blockschain}
+   \subsection{Streaming peer to peer}
+
+\section{Qualifica}
+   \subsection{Verifica}
+      \subsubsection{Analisi statica}
+      \subsubsection{Analisi dinamica}
+   \subsection{Validazione}
+      \subsubsection{Validazione interna}
+      \subsubsection{Validazione esterna}

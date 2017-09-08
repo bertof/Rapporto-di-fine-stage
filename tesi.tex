@@ -10,16 +10,12 @@
 
 %**************************************************************
 % Importazione package
-%************************************************************** 
-
+%**************************************************************
 \usepackage[english, italian]{babel}   % per scrivere in italiano e in inglese;
                                        % l'ultima lingua è predefinita
 
-\usepackage{booktabs}                  % tabelle          
-
-\usepackage{tabularx}                  % tabelle di larghezza prefissata                                    
-\usepackage{longtable}                 % tabelle su più pagine                                        
-\usepackage{ltxtable}                  % tabelle su più pagine e adattabili in larghezza
+\usepackage{booktabs}                  % tabelle
+\usepackage{tabularx}                  % tabelle di larghezza prefissata\usepackage{longtable}                 % tabelle su più pagine\usepackage{ltxtable}                  % tabelle su più pagine e adattabili in larghezza
 
 \usepackage{csquotes}                  % gestisce automaticamente i caratteri (")
 
@@ -35,10 +31,7 @@
 
 \usepackage[dvipsnames]{xcolor}        % colori
 
-\usepackage{booktabs}                  % tabelle                                       
-\usepackage{tabularx}                  % tabelle di larghezza prefissata                                    
-\usepackage{longtable}                 % tabelle su più pagine                                        
-\usepackage{ltxtable}                  % tabelle su più pagine e adattabili in larghezza
+\usepackage{booktabs}                  % tabelle\usepackage{tabularx}                  % tabelle di larghezza prefissata\usepackage{longtable}                 % tabelle su più pagine\usepackage{ltxtable}                  % tabelle su più pagine e adattabili in larghezza
 
 \usepackage{float}                     % utile per forzare figure dopo del testo con [H]
 
@@ -53,9 +46,7 @@
 \makeglossaries{}
 
 %\usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
-                                       % eccellente pacchetto per la bibliografia; 
-                                       % produce uno stile di citazione autore-anno; 
-                                       % lo stile "numeric-comp" produce riferimenti numerici
+                                       % eccellente pacchetto per la bibliografia;                                       % produce uno stile di citazione autore-anno;                                       % lo stile "numeric-comp" produce riferimenti numerici
                                        % per includerlo nel documento bisogna:
                                        % 1. compilare una prima volta tesi.tex;
                                        % 2. eseguire: biber tesi
@@ -64,7 +55,6 @@
 \input{tesi-conf}
 
 \begin{document}
-   
 
 %**************************************************************
 % Parte iniziale
@@ -83,10 +73,10 @@
 %**************************************************************
 
 \include{capitoli/capitolo-1}            % Introduzione - L'azienda
-\include{capitoli/capitolo-2}            % Progetto di stage
+\include{capitoli/capitolo-2}            % Scelta dello stage e rapporto con l'azienda
+\include{capitoli/capitolo-3}            % Progetto di stage
 
-\appendix                               
-%\input{capitoli/capitolo-A}            % Appendice A
+\appendix%\input{capitoli/capitolo-A}            % Appendice A
 
 %**************************************************************
 % Parte finale
