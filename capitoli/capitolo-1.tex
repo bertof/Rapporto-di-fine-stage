@@ -6,7 +6,7 @@
    \begin{center}
       \includegraphics[width=10cm,height=1.5cm,keepaspectratio]{immagini/vla-logo}
    \end{center}
-   \caption{Logo di \nomeAzienda{}}\label{logovla}
+   \caption{Logo di \nomeAziendaComm{}}\label{logovla}
 \end{figure}
 \nomeAziendaComm{} è una startup nata a New York nel 2011, con sede operativa a Torri di Quartesolo (VI), impegnata nello sviluppo di tecnologie di \engl{\gls{ubiquitous computing}} per i settori sanitario, manifatturiero e della sicurezza.
 
@@ -16,17 +16,17 @@ I prodotti principali di \nomeAzienda{} sono software personalizzati, siti web e
 Con il crescere del team e l'acquisizione di nuovo personale più specializzato, \nomeAzienda{} si sta espandendo verso servizi cloud per le aziende e software per dispositivi \engl{\gls{wearable}} e \engl{\gls{IoT}}; questi sono i primi approcci al modello di \engl{\gls{ubiquitous computing}} e permettono ai loro utenti una maggiore integrazione con la rete di informazioni e sensori che li circondano nella vita quotidiana. L'azienda sta sviluppando particolarmente il campo dei visori per realtà aumentata come supporto alle attività lavorative, promettendo grandi innovazioni nel settore manifatturiero.
 
 \section{Come lavora}
- 
+
    \subsection{Modello di sviluppo}
    \nomeAzienda{} lavora con il modello di sviluppo \engl{Agile} di tipo \engl{Scrum}. Questo modello pone una minore rigidità sulla documentazione e sulle formalità del prodotto, permettendo modifiche in corso d'opera e una collaborazione più rilassata tra cliente e fornitore.
-   
+
    \begin{figure}[htbp]
       \centering
       \includegraphics[width=14cm]{immagini/scrum-process}
       \caption{Ciclo di vita di Scrum. Source: Wikimedia Commons, Lakeworks, CC}
    \end{figure}
    %TODO: creare un'immagine migliore
-   
+
    \engl{Scrum} definisce uno \engl{sprint} come l'unità di misura dello sviluppo di un progetto, un periodo di tempo di lunghezza fissata generalmente tra una settimana e quattro settimane.
    L'insieme delle attività necessarie per l'avanzamento del progetto sono organizzate nel \engl{backlog} del prodotto.
    Per ogni \engl{sprint} il team pianifica quali di questi \engl{task} dovranno essere svolti e a chi andrà assegnato ciascuno di essi, definendo così il \engl{backlog} dello sprint.
@@ -94,8 +94,7 @@ Con il crescere del team e l'acquisizione di nuovo personale più specializzato,
 L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; di seguito analizzerò le più utilizzate.
 
    \subsection{Rackspace}
-   Rackspace è un cloud provider che offre servizi di managed cloud computing, basati su \gls{VPS} e altri servizi cloud, come \gls{AWS}, Microsoft Azure e OpenStack. Questo tipo di servizio permette di gestire facilmente servizi cloud utilizzati, mantenendo il pieno controllo di costi e infrastrutture, senza la necessità di conoscere a fondo ogni componente utilizzato. 
-   \nomeAzienda{} usa Rackspace come hosting provider nel caso di progetti complessi, quando è necessaria una completa gestione delle risorse.
+   Rackspace è un cloud provider che offre servizi di managed cloud computing, basati su \gls{VPS} e altri servizi cloud, come \gls{AWS}, Microsoft Azure e OpenStack. Questo tipo di servizio permette di gestire facilmente servizi cloud utilizzati, mantenendo il pieno controllo di costi e infrastrutture, senza la necessità di conoscere a fondo ogni componente utilizzato.
    \begin{figure}[H]
       \begin{center}
       \includegraphics[width=14cm,keepaspectratio]{immagini/rackspace-network}
@@ -103,23 +102,26 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
       \caption{Schema di rete generale di un'applicazione su Rackspace}
    \end{figure}
    Rackspace permette di gestire in modo semplice nodi per il load balancing e la ridondanza dei servizi. In questo modo è possibile garantire up-time estremamente elevati e distribuire gli aggiornamenti sui singoli nodi, senza mai fermare il servizio completamente.
+   \\
+   \nomeAzienda{} usa Rackspace come hosting provider nel caso di progetti complessi, quando è necessaria una completa gestione delle risorse.
 
    \subsection{Firebase}
    Firebase è una piattaforma di sviluppo per applicazioni Web e mobile, parte di Google Cloud Platform; fornisce servizi di scambio di messaggi e basi di dati in tempo reale, spazio di archiviazione, sistemi di autenticazione, web hosting e test automatici per applicazioni Android. La piattaforma fornisce anche un servizio di analisi e profilazione degli utenti e l'integrazione con il sistema di annunci pubblicitari di Google, AdMob.
-   Il caso d'uso principale di Firebase è quello di base di dati per la sincronizzazione di dati tra dispositivi, anche su piattaforme diverse, in tempi molto ridotti. A differenza di un database non relazionale comune, il servizio che Firebase offre si basa su una CDN molto estesa, che permette di ridurre i tempi di attesa per la sincronizzazione dei dati.
    \begin{figure}[H]
       \begin{center}
-         \includegraphics[width=14cm,keepaspectratio]{immagini/firebase-usecase}      
+         \includegraphics[width=14cm,keepaspectratio]{immagini/firebase-usecase}
       \end{center}
       \caption{Usecase generale di Firebase}
    \end{figure}
+   Il caso d'uso principale di Firebase è quello di base di dati per la sincronizzazione di dati tra dispositivi, anche su piattaforme diverse, in tempi molto ridotti. A differenza di un database non relazionale comune, il servizio che Firebase offre si basa su una CDN molto estesa, che permette di ridurre i tempi di attesa per la sincronizzazione dei dati.
+   \\
    \nomeAzienda{} utilizza Firebase quando necessita della creazione di un ambiente di sviluppo completo, veloce e facile da manutenere.
 
    \subsection{Java}
-   Java è un linguaggio di programmazione ad alto livello orientato agli oggetti pensato per essere il più possibile indipendente dalla piattaforma sulla quale viene eseguito. Java supera questo ostacolo utilizzano una macchina virtuale, la JVM, che permette di astrarre il sistema sottostante. Il vantaggio di Java sui linguaggi compilati tradizionali è proprio quello di poter essere eseguito su una qualsiasi piattaforma, a patto che esista una JVM per questa. 
+   Java è un linguaggio di programmazione ad alto livello orientato agli oggetti pensato per essere il più possibile indipendente dalla piattaforma sulla quale viene eseguito. Java supera questo ostacolo utilizzano una macchina virtuale, la JVM, che permette di astrarre il sistema sottostante. Il vantaggio di Java sui linguaggi compilati tradizionali è proprio quello di poter essere eseguito su una qualsiasi piattaforma, a patto che esista una JVM per questa.
    \begin{figure}[H]
       \begin{center}
-         \includegraphics[width=14cm,height=6.5cm,keepaspectratio]{immagini/java-architecture}      
+         \includegraphics[height=7cm,keepaspectratio]{immagini/java-architecture}
       \end{center}
       \caption{Architettura di Java}
    \end{figure}
@@ -130,15 +132,18 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
       \end{center}
       \caption{Architettura di Android. Source: \href{https://developer.android.com/guide/platform/index.html}{Documentazione Android Developers}}
    \end{figure}
+   Android consiste di una versione minimale del kernel Linux, completo di driver specializzati per l'hardware del dispositivo sul quale verrà installato. Al di sopra del kernel si trova un layer di astrazione dell'hardware. Questo layer permette agli strati superiori di astrarre l'hardware sottostante. Il layer superiore contiene librerie native in C o C++, altamente efficienti, e il runtime Android, l'equivalente della JVM in java, ma specializzato per l'esecuzione su dispositivi mobile e fortemente integrato con le librerie e l'hardware sottostante. Gli strati superiori sono, infine un'API per l'accesso alle risorse del sistema e le applicazioni. Queste sono racchiuse in contenitori e le autorizzazioni di queste possono essere gestite singolarmente.
 
    \subsection{Git e Bitbucket}
-   \nomeAzienda{} utilizza Git come \gls{CVS} per il versionamento del codice: Git è in grado di gestire progetti anche molto complessi in modo efficiente. Il suo sistema completamente distribuito permette a due persone di lavorare contemporaneamente sullo stesso file, senza necessità di una connessione di rete, e di conservare copie sicure del prodotto in luoghi separati, pur garantendone la consistenza.\\
-   \begin{figure}[htbp]
+   \nomeAzienda{} utilizza Git come \gls{CVS} per il versionamento del codice: Git è in grado di gestire progetti anche molto complessi in modo efficiente. Il suo sistema completamente distribuito permette a due persone di lavorare contemporaneamente sullo stesso file, senza necessità di una connessione di rete, e di conservare copie sicure del prodotto in luoghi separati, pur garantendone la consistenza.
+   \begin{figure}[H]
       \begin{center}
          \includegraphics[width=15cm,height=3cm,keepaspectratio]{immagini/git-branches}
       \end{center}
       \caption{Esempio di grafo di lavoro in Git. Source: Wikimedia Commons, Bunyk, CC}\label{grafogit}
    \end{figure}
+   Nell'esempio in Fig~\ref{grafogit} due sviluppatori hanno lavorato in parallelo in un repository Git, ciascuno in un branch separato, dando origine ad alcuni commit (i nodi A, B, C, D e W, X, Y, Z). Successivamente è stato eseguito un merge, un unione tra i due branch, che ha generato il nodo Z'. Nel caso di conflitti tra le righe di codice scritte o modificate, Git è in grado di valutare quali sono i \engl{chunk} di codice da controllare e lascerà agli sviluppatori il compito di risolverli.
+   \\
    Per facilitare la gestione del codice e automatizzare alcune attività, l'azienda ha scelto di utilizzare Bitbucket come hoster per le proprie repository. Bitbucket integra il servizio di pipeline, che permette di eseguire degli script in ambienti virtualizzati basati su Docker; in questo modo sono stati automatizzati i test di unità e integrazione e i controlli della quality assurance. Questo tipo di operazioni fanno risparmiare tempo, dato che non necessitano dell'intervento umano, inoltre la garanzia che ogni commit al repository è stato testato conferisce la sicurezza di poter rilasciare una nuova versione senza riserbo.
    \begin{figure}[H]
       \begin{center}
@@ -159,26 +164,27 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
 
 
    \subsection{G Suite}
-   G Suite, la soluzione per l'ufficio di Google, offre una gestione completa di mail commerciali, editor di testo, fogli di calcolo, calendario e archivio di dati.
+   G Suite, la soluzione per l'ufficio di Google, offre una gestione completa di mail commerciali, editor di testo, fogli di calcolo, calendario e archivio di dati; il tutto tramite una semplice interfaccia web.
    \begin{figure}[H]
       \begin{center}
       \includegraphics[width=16cm,keepaspectratio]{immagini/g-suite-products}
       \end{center}
       \caption{I prodotti di G Suite}
    \end{figure}
-   %TODO: G Suite include bla bla bla questo fa qusto, questo fa quello
+   Tra i prodotti più utilizzati di G Suite si notano Drive, il servizio di storage; Docs, Spreadsheet e Slides, rispettivamente per documenti di testo, fogli di calcolo e presentazioni; Gmail, per la gestione delle mail aziendali. G Suite include anche un servizio per la gestione di contatti, calendari e un servizio di video chat.
+   \\
    \nomeAzienda{} usa questo servizio per le proprie attività, soprattutto per il vantaggio di poter accedere ai dati salvati anche in mobilità, con la massima comodità.
 
    \subsection{WordPress}
    WordPress è \gls{CMS} open-source che offre una piattaforma editoriale personale; nato per gestire semplici blog, viene utilizzato come framework di sviluppo di siti molto più complessi, sfruttando il sistema a plugin su cui e basato. L'utilizzo di WordPress come base di un sito permette di iniziare a lavorare con un framework riutilizzabile, stabile e aggiornato che ne gestisce i contenuti e i dati, permettendo allo sviluppatore di concentrarsi sulla loro presentazione all'utente.
-   \\
-   Wordpress organizza i contenuti come pagine o articoli; predispone un archivio per organizzarli e un sistema di ricerca basato sui testi e sui metadati legati. La home del sito ha il compito di mostrare i contenuti più recenti o più importanti del sito e permette di scorrere tutti gli articoli come una vetrina.
    \begin{figure}[H]
       \begin{center}
          \includegraphics[width=16.5cm,keepaspectratio]{immagini/template-hierarchy}
          \caption{Architettura di una pagina Wordpress e gerarchia delle pagine. Source: \href{https://developer.wordpress.org/themes/basics/template-hierarchy/}{Wordpress Developer Documentation}}
       \end{center}
    \end{figure}
+   Wordpress organizza i contenuti come pagine o articoli; predispone un archivio per organizzarli e un sistema di ricerca basato sui testi e sui metadati legati. La home del sito ha il compito di mostrare i contenuti più recenti o più importanti del sito e permette di scorrere tutti gli articoli come una vetrina.
+   \\
    \nomeAzienda{} sfrutta WordPress come base dei propri siti anche per rendere la modifica dei contenuti semplice al proprio cliente.
 
 \section{Rapporto con l'innovazione}
