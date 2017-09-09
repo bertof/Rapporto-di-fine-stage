@@ -1,12 +1,125 @@
 %**************************************************************
-% Capitolo 2 - Descrizione dello stage
+% Capitolo 2 - COSA-COME - Il prodotto dello stage
 %**************************************************************
-\chapter{Descrizione dello stage\label{cap:descrizionestage}}
-\section{Scopo dello stage}
+\chapter{Il prodotto\label{cap:ilprodotto}}
+\section{Acquisizione delle conoscenze settoriali}
+   \subsection{Codifica video}
+      %Definizione di codifica video
+      %Definizione di codec
+      \subsubsection{Storia della codifica video}
+      %primi standard di codifica video
+      %cambiamenti
+      \subsubsection{Formati comunemente usati}
+            \paragraph{M-JPEG}
+            Motion JPEG  è un codec video che comprime ogni frame del video originale in una immagine in formato JPEG, un comune formato di compressione con perdita per immagini digitali. Originariamente creato per applicazioni multimediali, M-JPEG è attualmente utilizzato da dispositivi di videoregistrazione come camere digitali, IP cam e webcam.
+            \\
+            Un grande vantaggio dell'utilizzo di M-JPEG per la codifica video, che ha spinto la sua diffusione sulla maggior parte delle prime fotocamere digitali non professionali, è quello della bassa potenza di calcolo necessaria al suo utilizzo: è sufficiente una modifica software all'encoder hardware per JPEG per poter creare un codec M-JPEG.\@ Inoltre, permette la lettura non lineare del file, utile nel caso di sistemi di video editing. Inoltre l'encoding intraframe che sfrutta limita l'informazione contenuta in ciascun frame M-JPEG a quella di un frame del video originale, permettendo di cambiare velocemente il contenuto, senza considerare i frame precedenti o successivi, come invece accade nelle codifiche interframe come H.264/MPEG-4 AVC.\@
+            \\
+            Con l'accrescere della potenza di calcolo, M-JPEG  è stato soppiantato da MPEG-4, per la resa qualitativamente molto migliore a parità di bitrate, infatti JPEG è inefficiente nello spazio di archiviazione. Inoltre M-JPEG non sfrutta tecniche di predizione spaziale, come H.264/MPEG-4 AVC, che permetterebbero un ulteriore risparmio di spazio, a discapito di una maggiore potenza di calcolo necessaria.
 
-Lo scopo di questo stage è quello di studiare gli attuali metodi di trasmissione di video, in tempo reale e on demand, e di sviluppare un applicativo server in grado di gestire la ritrasmissione di messaggi tra i client connessi.
+            \paragraph{MPEG-1}
+            MPEG-1 è uno standard per la compressione con perdita di video e audio progettato per comprimere video con la qualità variabile tra il video di una \gls{VHS} e l'audio di un CD fino a 1.5Mbit/s senza perdita di qualità eccessive, permettendo la creazione di video CD, trasmissioni TV via satellite e via cavo e \gls{DAB}. Attualmente, MPEG-1 è il formato lossy con più supporto di compatibilità al mondo e uno degli standard che ha introdotto più noti è stato il formato audio MP3.
+            \\
+            MPEG-1 introduce molte tecnologie, frutto di studi statistici, che gli permettono di risparmiare molti dati per descrivere lo stesso video con poca perdita di qualità: innanzitutto l'utilizzo della trasformata DCT su blocchi di \(8\cdot8\) permette di ottenere coefficienti tra loro incorrelati e solo alcuni di questi sono dominanti, permettendo un alto livello di compressione. I coefficienti DCT ottenuti vengono quantizzati, con una grana più fine nelle frequenze più basse e con una più grossa nelle frequenze più alte. Queste influiscono meno sul risultato finale e il loro annullamento permette di diminuire il bitrate complessivo senza pesanti perdite di qualità.
+            Data la grande quantità di zeri dovuti alla quantizzazione, si utilizza una codifica run-length, ovvero si indicano i valori a coppie a,b, dove a rappresenta il valore di un coefficiente non nullo e b il numero di zeri che lo precedono. Si sfrutta infine una codifica entropica basata su una tabella di valori standardizzati, ottenuti con un approccio basato sulla codifica di Huffman.
 
-\section{Analisi preventiva dei rischi}
+            \paragraph{MPEG-4}
+            MPEG-4 è basato sugli standard MPEG-1, MPEG-2 e QuickTime. Si è osservato che, in caso di video con sezioni statiche o relativamente statiche, molti frame sono riproducibili dai precedenti. É stata, quindi, realizzata una tecnica che sfrutta la somiglianza tra frame vicini per risparmiare spazio nella codifica. Questa si ottiene indicando alcuni frame come frame chiave (I-Frame) e generando i frame seguenti come trasformazioni del frame principale
+            \\
+            MPEG-4 permette di creare oggetti multimediali con migliori capacità di adattamento e flessibilità, in grado di migliorare la qualità del risultato finale; inoltre è in grado di adattare la propria qualità sia a stream a basso bitrate, anche 1 Mbit/s, fino a formati ad alta risoluzione, come 4K e 8K.
+            \\
+            Le sue ottime performance di qualità e compressione costano in potenza computazionale, a causa della complessità della fase di quantizzazione; al contrario, la decodifica per la riproduzione è sufficientemente rapida e poco costosa, grazie anche a decodificatori hardware specializzati, ormai comunemente integrati nella maggior parte dei processori.
 
+            \paragraph{WebM}
+            WebM è un formato video royalty-free pensato per il web, rilasciato sotto licenza BSD, il cui sviluppo è sponsorizzato da Google. WebM sfrutta il motore di codifica VP9 e audio Opus ed è supportato nativamente dai maggiori browser, inclusi dispositivi mobile. WebM punta ad una migliore efficienza di compressione rispetto a MPEG-4 e sta sostituendo GIF come formato di animazione video. Mentre il formato è libero, i motori VP8 e VP9 sono patentati Google e solo nel 2013 MPEG LA ha raggiunto un accordo con la multinazionale per la licenza delle componenti essenziali all'implementazione dei codec. Le attuali implementazioni libere (libvpx) mostrano un significativo vantaggio nei tempi di codifica e nel risparmio di bitrate rispetto a MPEG-4 H.264 e H.265.
 
-\section{Pianificazione}
+   \subsection{Protocolli}
+      \subsubsection{Storia dei protocolli e standardizzazione}
+
+      \subsubsection{Differenza tra protocolli real-time e on-demand}
+
+      \subsubsection{Problemi dell'UDP con i firewall}
+
+      \subsubsection{WebRTC}
+
+   \subsection{Architettura di una piattaforma di streaming}
+      \subsubsection{Struttura di massima}
+
+      \subsubsection{Inbound}
+         \paragraph{Streaming}
+
+         \paragraph{Upload di file}
+
+      \subsubsection{Storage}
+         \paragraph{Sistemi elastici}
+
+         \paragraph{Organizzazione dei contenuti}
+
+      \subsubsection{Outbound}
+         \paragraph{Standard e reti}
+
+         \paragraph{CDN}
+
+         \paragraph{Relay streaming}
+
+         \paragraph{Codifica al volo}
+
+   \subsection{Trasmissione dei contenuti in mobilità}
+      \subsubsection{Difficoltà della trasmissione in mobilità}
+
+      \subsubsection{Reti}
+         \paragraph{Rete 4G}
+         \paragraph{WiFi}
+         \paragraph{Bluetooth}
+
+\section{Analisi dei requisiti}
+   \subsection{Analisi preliminare}
+      %Definizione dei requisiti
+
+   \subsection{Definizione dei casi d'uso}
+      %Diagramma UML
+
+\section{Struttura della piattaforma}
+   \subsection{Diagramma strutturale}
+      %Diagramma UML
+      %Spiegazione della funzione delle compnenti
+
+   \subsection{Confronto con soluzioni esistenti}
+      \subsubsection{YouTube}
+      \subsubsection{Red5 Pro}
+      \subsubsection{Contus Vplay}
+      \subsubsection{Streamroot}
+      \subsubsection{Wowza Streaming Engine}
+
+\section{Tecnologie utilizzate}
+   \subsection{Linguaggi --- Java}
+      %Integrazione facile con Android
+
+   \subsection{Piattaforma --- Tomcat8 EE}
+
+   \subsection{Protocollo --- TCP su WebSocket}
+
+   \subsection{Tipo di dati scambiati --- JSON vs XML}
+      %Meno prolisso
+      %Scelto per semplificare la codifica della piattaforma
+      %Facile a comprendere
+   \subsection{Strumetni di supporto}
+      \subsubsection{Strumenti di versionamento}
+         %Git e Bitbucket
+      \subsubsection{Strumenti di test e verifica}
+         %JUnit
+      \subsubsection{Strumenti di analisi di rete}
+         %Wireshark
+      \subsubsection{Strumenti di continuous integration}
+         %Docker
+\section{Nuovi orizzonti}
+   \subsection{Blockchain}
+   \subsection{Streaming peer to peer}
+
+\section{Qualifica}
+   \subsection{Verifica}
+      \subsubsection{Analisi statica}
+      \subsubsection{Analisi dinamica}
+   \subsection{Validazione}
+      \subsubsection{Validazione interna}
+      \subsubsection{Validazione esterna}
