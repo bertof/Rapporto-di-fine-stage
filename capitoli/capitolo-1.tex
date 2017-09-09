@@ -136,7 +136,7 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
       \\
       Source: \href{https://developer.android.com/guide/platform/index.html}{Documentazione Android Developers}}
    \end{figure}
-   Android consiste di una versione minimale del kernel Linux, completo di driver specializzati per l'hardware del dispositivo sul quale verrà installato. Al di sopra del kernel si trova un layer di astrazione dell'hardware. Questo layer permette agli strati superiori di astrarre l'hardware sottostante. Il layer superiore contiene librerie native in C o C++, altamente efficienti, e il runtime Android, l'equivalente della JVM in java, ma specializzato per l'esecuzione su dispositivi mobile e fortemente integrato con le librerie e l'hardware sottostante. Gli strati superiori sono, infine un'API per l'accesso alle risorse del sistema e le applicazioni. Queste sono racchiuse in contenitori e le autorizzazioni di queste possono essere gestite singolarmente.
+   Android consiste di una versione minimale del kernel Linux, completo di driver specializzati per l'hardware del dispositivo sul quale verrà installato. Al di sopra del kernel si trova un layer di astrazione dell'hardware. Questo layer permette agli strati superiori di astrarre l'hardware sottostante. Il layer superiore contiene librerie native in C o C++, altamente efficienti, e il runtime Android, l'equivalente della JVM in Java, ma specializzato per l'esecuzione su dispositivi mobile e fortemente integrato con le librerie e l'hardware sottostante. Gli strati superiori sono, infine un'API per l'accesso alle risorse del sistema e le applicazioni. Queste sono racchiuse in contenitori e le autorizzazioni di queste possono essere gestite singolarmente.
 
    \subsection{Git e Bitbucket}
    \nomeAzienda{} utilizza Git come \gls{CVS} per il versionamento del codice: Git è in grado di gestire progetti anche molto complessi in modo efficiente. Il suo sistema completamente distribuito permette a due persone di lavorare contemporaneamente sullo stesso file, senza necessità di una connessione di rete, e di conservare copie sicure del prodotto in luoghi separati, pur garantendone la consistenza.
@@ -160,11 +160,11 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
    La configurazione tipica di una pipeline su Bitbucket segue il seguente iter:
    \begin{enumerate}
       \item{Uno sviluppatore carica sul server Bitbucket del codice, tramite un push di Git;}
-      \item{Il server Bitbucket carica il codice in un contenitore docker, secondo la configurazione del repository;}
+      \item{Il server Bitbucket carica il codice in un contenitore Docker, secondo la configurazione del repository;}
       \item{Il contenitore esegue la configurazione dell'applicazione e lancia tutti i test, restituendone i risultati al server;}
       \item{Se i test vengono superati il commit viene ritenuto valido, altrimenti può essere scartato;}
-      \item{Se il codice è stato caricato su un ramo di release, il nuovo commit viene caricato su un nuovo contenitore docker, che si occuperà della creazione di una build del prodotto;}
-      \item{Lo stesso docker può essere configurato in modo tale da caricare il prodotto compilato sui server di produzione, oppure avvisare un certo gruppo di persone di eseguire ulteriori test sulla build ottenuta.}
+      \item{Se il codice è stato caricato su un ramo di release, il nuovo commit viene caricato su un nuovo contenitore Docker, che si occuperà della creazione di una build del prodotto;}
+      \item{Lo stesso Docker può essere configurato in modo tale da caricare il prodotto compilato sui server di produzione, oppure avvisare un certo gruppo di persone di eseguire ulteriori test sulla build ottenuta.}
    \end{enumerate}
    In caso di fallimento di uno dei task della pipeline, lo sviluppatore che ha caricato il codice viene avvisato degli errori e gli vengono forniti i log delle operazioni eseguite.
 
@@ -186,12 +186,12 @@ L'azienda fa uso di un gran numero di tecnologie durante le proprie attività; d
    \begin{figure}[H]
       \begin{center}
          \includegraphics[width=16.5cm,keepaspectratio]{immagini/template-hierarchy}
-         \caption[Architettura di una pagina Wordpress e gerarchia delle pagine]{Architettura di una pagina Wordpress e gerarchia delle pagine
+         \caption[Architettura di una pagina WordPress e gerarchia delle pagine]{Architettura di una pagina WordPress e gerarchia delle pagine
          \\
-         Source: \href{https://developer.wordpress.org/themes/basics/template-hierarchy/}{Wordpress Developer Documentation}}
+         Source: \href{https://developer.wordpress.org/themes/basics/template-hierarchy/}{WordPress Developer Documentation}}
       \end{center}
    \end{figure}
-   Wordpress organizza i contenuti come pagine o articoli; predispone un archivio per organizzarli e un sistema di ricerca basato sui testi e sui metadati legati. La home del sito ha il compito di mostrare i contenuti più recenti o più importanti del sito e permette di scorrere tutti gli articoli come una vetrina.
+   WordPress organizza i contenuti come pagine o articoli; predispone un archivio per organizzarli e un sistema di ricerca basato sui testi e sui metadati legati. La home del sito ha il compito di mostrare i contenuti più recenti o più importanti del sito e permette di scorrere tutti gli articoli come una vetrina.
    \\
    \nomeAzienda{} sfrutta WordPress come base dei propri siti anche per rendere la modifica dei contenuti semplice al proprio cliente.
 
