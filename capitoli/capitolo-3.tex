@@ -65,16 +65,23 @@
 
    \subsection{Architettura di una piattaforma di streaming}
       \subsubsection{Struttura di massima}
-      I servizi offerti da un servizio di video streaming possono essere inquadrati come real-time, on-demand o ibridi
-      \subsubsection{Inbound}
-         \paragraph{Streaming}
+      Una piattaforma di video streaming si compone di cinque elementi principali:
+      \begin{itemize}
+            \item La rete di inbound, ovvero il sistema di reti che gestisce l'ingresso di dati nella piattaforma, siano questi file video o stream;
+            \item Il motore di codifica, che permette di ricodificare i video in ingresso per renderli disponibili nei formati opportuni ai passaggi successivi.
+            \item Il sistema di storage, per il salvataggio dei contenuti per la breve, media e lunga conservazione;
+            \item Il sistema di gestione e ricerca dei contenuti, che permette agli utenti di caricare, cercare e riprodurre i contenuti di proprio interesse;
+            \item Il sistema di distribuzione dei contenuti, ovvero la rete che si occupa della trasmissione di dati ai client.
+      \end{itemize}
+      %TODO: immagine che descrive i componenti della piataforma
 
-         \paragraph{Upload di file}
+      \subsubsection{Inbound e transcodifica}
+      La rete di inbound è la parte del sistema che si occupa di accettare file e stream da parte degli utenti e di inoltrarli ai nodi sottostanti. Questa componente è soggetta ai tipici problemi delle applicazioni web con un numero di utenti rilevante, ovvero la stabilità del servizio, la necessità di reti ad alta disponibilità, il bilanciamento del carico di lavoro tra i nodi sottostanti.
+      \\
+      I contenuti caricati tramite il sistema di inbound vengono, poi, inviati ai motori di codifica, componenti specializzati all'encoding dei video. A seconda del tipo di input è possibile scegliere se utilizzare un transcodificatore per lo streaming, in grado di rielaborare il formato video di uno stream ``al volo'' e con poca latenza aggiuntiva, oppure, nel caso di file video, questi vengono caricati in storage temporanei e successivamente elaborati da transcodificatori comuni.
 
-      \subsubsection{Storage}
-         \paragraph{Sistemi elastici}
-
-         \paragraph{Organizzazione dei contenuti}
+      \subsubsection{Storage e organizzazione dei contenuti}
+      
 
       \subsubsection{Outbound}
          \paragraph{Standard e reti}
