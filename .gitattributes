@@ -28,3 +28,4 @@ immagini/git-logo.jpg filter=lfs diff=lfs merge=lfs -text
 immagini/rackspace-logo.jpg filter=lfs diff=lfs merge=lfs -text
 immagini/scrum-process.jpg filter=lfs diff=lfs merge=lfs -text
 immagini/unicreditstartlab-logo.jpg filter=lfs diff=lfs merge=lfs -text
+tesi.pdf filter=lfs diff=lfs merge=lfs -text
