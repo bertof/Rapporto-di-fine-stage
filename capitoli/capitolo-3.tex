@@ -88,19 +88,29 @@
             \subsubsection{Outbound, protocolli e CDN}
             Nel caso della distribuzione di contenuti verso i client sono generalmente utilizzati protocolli basati su TCP, come MPEG-DASH, Apple HLS e Microsoft Smooth Streaming. Questo tipo di protocolli permettono più stream paralleli e la possibilità di eseguire caching dei contenuti trasmessi, particolarmente utili nel caso di utilizzo di CDN per estendere la distribuzione. Queste reti, solitamente di proprietà delle aziende di telecomunicazione su cui poggiano gli ISP, offrono un servizio di caching che permette di spostare il carico di rete dovuto all'accesso ai contenuti dai server principali del servizio a server più piccoli e dislocati sul territorio. Questo tipo di distribuzione, non solo diminuisce il carico di rete, limitato quindi alla sola autorizzazione all'accesso, ma permette di avere latenza e tempi di caricamento minori da parte degli utenti.
 
-            \subsubsection{Streaming relay}
-            Esistono casi di servizi di streaming che devono permettere il reinvio di dati tra due client, senza alcuna modifica ai contenuti trasmessi; in questo caso di parla di streaming relay. Questo tipo di servizio è fondamentale se i due client non possono comunicare direttamente, magari perché bloccati da firewall o nascosti da una rete con NAT.\@ 
+            \subsubsection{Message relay}
+            Esistono casi di servizi di streaming che devono permettere il reinvio di dati tra due client, senza alcuna modifica ai contenuti trasmessi; in questo caso di parla di message relay. Questo tipo di servizio è fondamentale se i due client non possono comunicare direttamente, magari perché bloccati da firewall o nascosti da una rete con NAT.\@ 
 
-	\subsection{Trasmissione dei contenuti in mobilità}
+      \subsection{Trasmissione dei contenuti in mobilità}
+      %TODO: aggiungere alla bibliografia http://www.telegraph.co.uk/technology/2016/11/01/mobile-web-usage-overtakes-desktop-for-first-time/
+      La quantità di utenti vhe consumano contenuti multimediali su applicazioni mobile sempre più in aumento, tanto che nel Novembre 2016 si è registrato il sorpasso della quantità di utenti su tali piattaforme, rispetto ai desktop. É in crescita anche l'utilizzo di questi dispositivi per eseguire live stream, specialmente legati a social network, come Twitter, Facebook e Google+.
+      \\
+      L'utilizzo di dispositivi mobile aggiunge un ulteriore strato di complessità alla comunicazione con i servizi web, come anche le piattaforme di streaming.
+      Le difficoltà maggiori che si incontrano in questo campo sono la limitata potenza computazionale dei dispositivi e autonomia energetica, i limiti imposti da una rete senza fili e la grande frammentazione dei sistemi, specialmente quando si tratta di Android.
+      \\
+      La maggior parte dei problemi precedentemente citati viene gestito dal sistema operativo, ma restano le limitazioni fisiche, ovvero la velocità di trasferimento dei dati: 
+            \subsubsection{Reti per dipositivi mobile}
+                  Le principali reti disponibili per dispositivi mobile possono essere riassunte nelle seguenti:
+                  
+                  \paragraph{4G --- LTE}
+                  LTE, lo standard commerciale 4G per le telecomunicazioni mobile supporta downlink con velocità di picco di 300 Mbit/s e uplink di 75 Mbit/s in caso di posizione statica. Questo tipo di connessione è ampiamente sufficiente alla trasmissione di video in alta risoulzione e alto framerate. LTE ha lo svantaggio di essere soggetto a forti interferenze quando deve attraversare materiali solidi come muri o persone.
 
+                  \paragraph{Wi-Fi}
+                  L'ultimo standard Wi-Fi, IEE 802.11ac, ormai comunemente supportato dai dispositivi mobile in commercio, raggiunge una velocità di trasmissione di circa un Gbit/s. Il precedente standard, IEE 802.11n, era limitato a 300 Mbit/s tramite l'utilizzo di sistemi ad antenna multipla. Anche Wi-Fi è soggetto ad interferenze, specialmente quando utilizzato sulle frequenze più alte, a 5GHz.
 
-		\subsubsection{Difficoltà della trasmissione in mobilità}
-
-		\subsubsection{Reti}
-			\paragraph{Rete 4G}
-			\paragraph{WiFi}
-			\paragraph{Bluetooth}
-
+                  \paragraph{Bluetooth 5}
+                  Bluetooth 5 ha un throughput molto più basso dei precedenti canali di comunicazione; raggiunge, infatti, circa 50 Mb/s, un bitrate appena sufficiente alla trasmissione di video HD, al contrario, però, la distanza tra il trasmittente e il ricevente è molto più ridotto. Il vantaggio principale di Bluetooth è quello di utilizzare una minore quantità di energia elettrica per comunicare con altri dispositivi.
+      
 \section{Analisi dei requisiti}
 	\subsection{Analisi preliminare}
 		%Definizione dei requisiti
