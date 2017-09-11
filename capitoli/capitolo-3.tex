@@ -107,15 +107,19 @@
 \section{Analisi dei requisiti}
 	 \subsection{Analisi preliminare}
 	 L'analisi preliminare si è focalizzata sulla definizione degli attori e degli obiettivi e delle funzionalità principali del software da produrre.
+	 \\
+	 Il software deve gestire l'autenticazione di amministratori e utenti; questi hanno, in entrabi i casi, hanno un'identità univoca e un token di accesso. Gli amministratori hanno la possibilità di creare e rimmuovere canali, aggiungere e togliere utenti e gestirne l'autenticazione.
+	 Gli utenti possono autenticarsi, inviare messaggi nei canali dove sono registrati o abbandonarne uno.
+	 \\
 	 Ho definito, in collaborazione con gli sviluppatori del team che si occupa del progetto, gli attori del sistema, le interazioni che possono intraprendere e i risultati di ciascuna di queste. Per fare ciò ho definito i casi d'uso tramite un diagramma UML.\@
 
 	 \subsection{Definizione dei casi d'uso}
 	 Segue una versione ristretta della definizione dei casi d'uso definiti.
 		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=17cm,keepaspectratio]{UML/png/Use Case Model__Use Cases_0}
-		\caption{Diagramma dei casi d'uso del sistema}
-		\end{center}
+			\begin{center}
+				\includegraphics[width=16.5cm,keepaspectratio]{UML/png/Use Case Model__Use Cases_0}
+				\caption{Diagramma dei casi d'uso del sistema}
+			\end{center}
 		\end{figure}
 
 		\subsubsection{Attori}
@@ -128,7 +132,8 @@
 
 		\subsubsection{Casi d'uso di Unauthenticated Client}
 		\begin{itemize}
-			\item \textbf{Authenticate client}: L'utente esegue l'autenticazione su sistema. 
+			\item \textbf{Authenticate client}: L'utente esegue l'autenticazione su sistema come client;
+			\item \textbf{Authenticate admin}: L'utente esegue l'autenticazione su sistema come admin.
 		\end{itemize}
 
 		\subsubsection{Casi d'uso di Authenticated Client}
@@ -140,17 +145,16 @@
 
 		\subsubsection{Casi d'uso di Admin}
 		\begin{itemize}
-			\item \textbf{Authenticate admin}
-			\item \textbf{Add channe}
-			\item \textbf{Remove channel}
-			\item \textbf{Get channel list}
-			\item \textbf{Add user to channel}
-			\item \textbf{Remobe user from channel}
-			\item \textbf{Get users in channel}
-			\item \textbf{Set user token}
-			\item \textbf{Get user token}
-			\item \textbf{Reset user token}
-			\item \textbf{Get user channels}
+			\item \textbf{Add channel}: L'ammnistratore crea un nuovo canale;
+			\item \textbf{Remove channel}: L'amministratore elimina un canale;
+			\item \textbf{Get channel list}: L'amministratore ottiene la lista dei canali registrati;
+			\item \textbf{Add user to channel}: L'amministratore registra un utente in un certo canale;
+			\item \textbf{Remove user from channel}: L'amministratore rimuove un utente da un canale;
+			\item \textbf{Get users in channel}: L'amministratore ottiene la lista degli utenti registrati in un canale;
+			\item \textbf{Set user token}: L'amministratore imposta il token di autenticazione di un utente;
+			\item \textbf{Get user token}: L'amministratore ottiene il token di autenticazione di un utente;
+			\item \textbf{Reset user token}: L'amministratore resetta il token di autenticazione di un utente;
+			\item \textbf{Get user channels}: L'amministratore ottiene la lista dei canali in cui un certo utente è registrato.
 		\end{itemize}
 		
 
