@@ -107,27 +107,47 @@
 \section{Analisi dei requisiti}
 	 \subsection{Analisi preliminare}
 	 L'analisi preliminare si è focalizzata sulla definizione degli attori e degli obiettivi e delle funzionalità principali del software da produrre.
+	 Ho definito, in collaborazione con gli sviluppatori del team che si occupa del progetto, gli attori del sistema, le interazioni che possono intraprendere e i risultati di ciascuna di queste. Per fare ciò ho definito i casi d'uso tramite un diagramma UML.\@
 
-    \subsection{Definizione dei casi d'uso}
+	 \subsection{Definizione dei casi d'uso}
+	 Segue una versione ristretta della definizione dei casi d'uso definiti.
+		\begin{figure}[H]
+		\begin{center}
+		\includegraphics[width=17cm,keepaspectratio]{UML/png/Use Case Model__Use Cases_0}
+		\caption{Diagramma dei casi d'uso del sistema}
+		\end{center}
+		\end{figure}
 
-	 \subsubsection{Attori}
+		\subsubsection{Attori}
 		\begin{itemize}
-		\item \textbf{Client}: un utente che interagisce con il sistema;
-		\item \textbf{Authenticated Client}: un client non ancora autenticato;
-		\item \textbf{Authenticated Client}: un client che ha eseguiti l'autenticazione ed è registrato all'interno di almeno un canale;
+			\item \textbf{Client}: un utente che interagisce con il sistema;
+			\item \textbf{Unauthenticated Client}: un client non ancora autenticato;
+			\item \textbf{Authenticated Client}: un client che ha eseguito l'autenticazione ed è registrato all'interno di almeno un canale;
+			\item \textbf{Admin}: un utente o un sistema automatico che ha il ruolo di amministratore del servizio offerto dal server.
 		\end{itemize}
 
-		\begin{figure}[htbp]
-			\begin{center}
-				\includegraphics[width=16cm,keepaspectratio]{UML/png/Use Case Model__Use Cases_0}
-				\caption{Diagramma usecase}
-			\end{center}
-		\end{figure}
+		\subsubsection{Casi d'uso di Unauthenticated Client}
+		\begin{itemize}
+			\item \textbf{Authenticate client}: L'utente esegue l'autenticazione su sistema. 
+		\end{itemize}
+
+		\subsubsection{Casi d'uso di Authenticated Client}
+		\begin{itemize}
+			\item \textbf{Send message}: L'utente invia un messaggio all'interno di un canale in cui è registrato; 
+			\item \textbf{Leave channel}: L'utente lascia il canale e viene deregistrato; 
+			\item \textbf{Get subscriptions}: L'utente ottiene la lista dei canali nei quali è registrato; 
+		\end{itemize}
+
+		\subsubsection{Casi d'uso di Admin}
+		%\begin{itemize}
+		%	\item TODO: continuare
+		%\end{itemize}
+		
 
 	 \section{Struttura della piattaforma}
 	 \subsection{Diagramma strutturale}
-	 Diagramma UML
-	 Spiegazione della funzione delle compnenti
+	 Diagramma UML\\
+	 Spiegazione della funzione delle componenti
 
 	 \subsection{Confronto con soluzioni esistenti}
 		\subsubsection{YouTube}
