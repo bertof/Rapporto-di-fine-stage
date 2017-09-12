@@ -85,12 +85,14 @@
 
 			\subsubsection{Outbound, protocolli e \gls{CDN}}
 			Nel caso della distribuzione di contenuti verso i client sono generalmente utilizzati protocolli basati su TCP, come MPEG-DASH, Apple HLS e Microsoft Smooth Streaming. Questo tipo di protocolli permettono più stream paralleli e la possibilità di eseguire caching dei contenuti trasmessi, particolarmente utili nel caso di utilizzo di \gls{CDN} per estendere la distribuzione. Queste reti, solitamente di proprietà delle aziende di telecomunicazione su cui poggiano gli ISP, offrono un servizio di caching che permette di spostare il carico di rete dovuto all'accesso ai contenuti dai server principali del servizio a server più piccoli e dislocati sul territorio. Questo tipo di distribuzione, non solo diminuisce il carico di rete, limitato quindi alla sola autorizzazione all'accesso, ma permette di avere latenza e tempi di caricamento minori da parte degli utenti.
+			\\
+			Un nuovo sitema di distribuzione, particolarmente efficace se accoppiato ad una CDN, é quello di aggiungere al client una componente che permetta la condivisione dei chunk di video scaricati tramite una rete peer-to-peer. In questo modo gli utenti hanno a disposizione una rete di distribuzione ancora più vasta e che aumenta in base all'aumento di utenza.
 
 			\subsubsection{Message relay}
 			Esistono casi di servizi di streaming che devono permettere il reinvio di dati tra due client, senza alcuna modifica ai contenuti trasmessi; in questo caso di parla di message relay. Questo tipo di servizio è fondamentale se i due client non possono comunicare direttamente, magari perché bloccati da firewall o nascosti da una rete con NAT.\@
 
 			\subsubsection{Servizi annessi}
-			Molte piattaforme di streaming non si limitano alla sola trasmissione di contenenti ma offrono anche un certo numero di servizi annessi.
+			Molte piattaforme di streaming non si limitano alla sola trasmissione di contenenti ma offrono anche un certo numero di servizi annessi. In particolare le informazioni legate alla demografia degli utenti e alla loro profilazione sono di particolare interesse per i creatori. Inolte sono comuni servizi di monetizzazione e annunci pubblicitari, cifratura dei contenuti e sistemi DRM.
 
 
 	 \subsection{Trasmissione dei contenuti in mobilità}
