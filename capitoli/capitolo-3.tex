@@ -89,6 +89,10 @@
 			\subsubsection{Message relay}
 			Esistono casi di servizi di streaming che devono permettere il reinvio di dati tra due client, senza alcuna modifica ai contenuti trasmessi; in questo caso di parla di message relay. Questo tipo di servizio è fondamentale se i due client non possono comunicare direttamente, magari perché bloccati da firewall o nascosti da una rete con NAT.\@
 
+			\subsubsection{Servizi annessi}
+			Molte piattaforme di streaming non si limitano alla sola trasmissione di contenenti ma offrono anche un certo numero di servizi annessi.
+
+
 	 \subsection{Trasmissione dei contenuti in mobilità}
 			%TODO: aggiungere alla bibliografia http://www.telegraph.co.uk/technology/2016/11/01/mobile-web-usage-overtakes-desktop-for-first-time/
 			La quantità di utenti che consumano contenuti multimediali su applicazioni mobile sempre più in aumento, tanto che nel Novembre 2016 si è registrato il sorpasso della quantità di utenti su tali piattaforme, rispetto ai desktop. É in crescita anche l'utilizzo di questi dispositivi per eseguire live stream, specialmente legati a social network, come Twitter, Facebook e Google+.
@@ -108,7 +112,7 @@
 	 \subsection{Analisi preliminare}
 	 L'analisi preliminare si è focalizzata sulla definizione degli attori e degli obiettivi e delle funzionalità principali del software da produrre.
 	 \\
-	 Il software deve gestire l'autenticazione di amministratori e utenti; questi hanno, in entrabi i casi, hanno un'identità univoca e un token di accesso. Gli amministratori hanno la possibilità di creare e rimmuovere canali, aggiungere e togliere utenti e gestirne l'autenticazione.
+	 Il software deve gestire l'autenticazione di amministratori e utenti; questi hanno, in entrambi i casi, hanno un'identità univoca e un token di accesso. Gli amministratori hanno la possibilità di creare e rimuovere canali, aggiungere e togliere utenti e gestirne l'autenticazione.
 	 Gli utenti possono autenticarsi, inviare messaggi nei canali dove sono registrati o abbandonarne uno.
 	 \\
 	 Ho definito, in collaborazione con gli sviluppatori del team che si occupa del progetto, gli attori del sistema, le interazioni che possono intraprendere e i risultati di ciascuna di queste. Per fare ciò ho definito i casi d'uso tramite un diagramma UML.\@
@@ -145,7 +149,7 @@
 
 		\subsubsection{Casi d'uso di Admin}
 		\begin{itemize}
-			\item \textbf{Add channel}: L'ammnistratore crea un nuovo canale;
+			\item \textbf{Add channel}: L'Amministratore crea un nuovo canale;
 			\item \textbf{Remove channel}: L'amministratore elimina un canale;
 			\item \textbf{Get channel list}: L'amministratore ottiene la lista dei canali registrati;
 			\item \textbf{Add user to channel}: L'amministratore registra un utente in un certo canale;
@@ -161,7 +165,7 @@
 \section{Struttura della piattaforma}
 Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete da utilizzare e la progettazione strutturale del sistema.
 	\subsection{Protocolli}
-	Ho esguito la scelta dei protocolli in collaborazione con il team di sviluppatori che lavorava sul client Android, per trovare la migliore soluzione in termini di latenza, throughput e complessità di implementazione.
+	Ho eseguito la scelta dei protocolli in collaborazione con il team di sviluppatori che lavorava sul client Android, per trovare la migliore soluzione in termini di latenza, throughput e complessità di implementazione.
 	\\
 	I protocolli UDP sono stati scartati a causa dei problemi con firewall riportati precedentemente. Per semplificare l'invio di dati generici, senza essere necessariamente legati ad un certo protocollo dello strato applicativo, abbiamo deciso di utilizzare dei WebSocket; questi permettono l'invio sia di singoli messaggi, sia di stream di dati. Inoltre, esistono implementazioni open-source dello standard per la maggior parte delle piattaforme, inclusi iOS e Android e Java, rendendo, quindi, l'implementazione di client e server più semplice.
 		 
@@ -176,7 +180,7 @@ Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete
 	\end{figure}
 
 	\subsubsection{ConcreteModel e interfacce del modello}
-	Il modello è responsabile del salvataggio e della gestione delle infomazioni legate agli utenti, ai canali, alle registrazioni e ai messaggi da inviare. Per organizzare chiaramente le sue funzionalità ho utilizzato interfacce molto specifiche.
+	Il modello è responsabile del salvataggio e della gestione delle informazioni legate agli utenti, ai canali, alle registrazioni e ai messaggi da inviare. Per organizzare chiaramente le sue funzionalità ho utilizzato interfacce molto specifiche.
 
 	\subsubsection{IUserID e IChannelKey}
 	Per identificare univocamente un utente o un canale ho designato due interfacce per due classi di oggetti che permettono di ottenere un identificativo univoco sotto forma di stringa; in questo modo è possibile referenziare uno di questi oggetti indicandone il solo ID
@@ -184,31 +188,44 @@ Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete
 	\subsubsection{User}
 	La classe astratta User definisce un utente e permette di caricare ed estrarre informazioni sui profili degli utenti.
 
-	\subsubsection{IChannel e AbstractCahnnel}
+	\subsubsection{IChannel e AbstractChannel}
 	IChannel e AbstractChannel individuano le funzionalità e i dati di base di un canale, come il suo nome e il suo scopo.
 
 	\subsubsection{Message, WrappedMessage e MessageContent}
-	Message rappresenta un messaggio da inviare, il cui contenuto è un insieme di MessageContent. Al fine di garantire la possibilità di inviare qualsiasi tipo di contenuto tramite un messaggio, MessageContent eredita direttamente dalla classe Java Serializable, ma non impone altri limiti. WrappedMessage aggiunge ad un messaggio le informazioni per spedirlo, ovvero la ChannelKey e l'userID del destinatario.
+	Message rappresenta un messaggio da inviare, il cui contenuto è un insieme di MessageContent. Al fine di garantire la possibilità di inviare qualsiasi tipo di contenuto tramite un messaggio, MessageContent eredita direttamente dalla classe Java Serializable, ma non impone altri limiti. WrappedMessage aggiunge ad un messaggio le informazioni per spedirlo, ovvero la ChannelKey e l'UserID del destinatario.
 
 	\subsubsection{Controller di Admin, User e Beacon}
-	I tre controller del sistema sono singleton e gestiscono le interazioni e aggiornano il modello. AdminServerController e UserServerController esegunono, rispettivamente, le azioni ricevute da un amministratore e da un utente. BeaconServerController è incaricato della creazione dei messaggi e del loro invio; utilizza un pattern command e una coda intelligente.
+	I tre controller del sistema sono singleton e gestiscono le interazioni e aggiornano il modello. AdminServerController e UserServerController eseguono, rispettivamente, le azioni ricevute da un amministratore e da un utente. BeaconServerController è incaricato della creazione dei messaggi e del loro invio; utilizza un pattern command e una coda intelligente.
 
 \section{Confronto con soluzioni esistenti}
 Propongo di seguito un confronto con le più famose soluzioni esistenti.
 	\subsection{YouTube}
-	YouTube utilizza lo standard RTSP (Real Time Streaming Protocol) per l'inbound di stream video, mentre il principale protocollo per la trasmissione è MPEG-DASH;\@ questa scelta permette di ottenere una piattaforma facilmente accessibile, pur perdendo una parte del througput a causa del protocollo di trasporto. YouTube permette streaming-on demand dei video caricati dagli utenti, inoltre ha integrato il servizio con un sistema live-streaming ibrido nel Settembre del 2016. Attualmente YouTube supporta video filmati con tecnologie 3D e video 360\textdegree, integrati con la piattaforma Google Cardboard. Il formato stadard utilizzato da YouTube è H.264/MPEG-4 AVC, ma è in corso una migrazione verso il formato VP9.
+	YouTube utilizza lo standard RTSP (Real Time Streaming Protocol) per l'inbound di stream video, mentre il principale protocollo per la trasmissione è MPEG-DASH;\@ questa scelta permette di ottenere una piattaforma facilmente accessibile, pur perdendo una parte del throughput a causa del protocollo di trasporto. YouTube permette streaming-on demand dei video caricati dagli utenti, inoltre ha integrato il servizio con un sistema live-streaming ibrido nel Settembre del 2016. Attualmente YouTube supporta video filmati con tecnologie 3D e video 360\textdegree, integrati con la piattaforma Google Cardboard. Il formato standard utilizzato da YouTube è H.264/MPEG-4 AVC, ma è in corso una migrazione verso il formato VP9.
 	\\
-	YouTube associa al suo servizio di streaming una serie di servizi paralleli, come il sistema di monetizzazine di AdMob e di pubblicità AdSense e quello di profilazione e analisi Google Analytics.
+	YouTube associa al suo servizio di streaming una serie di servizi paralleli, come il sistema di monetizzazione di AdMob e di pubblicità AdSense e quello di profilazione e analisi Google Analytics.
 
 	\subsection{Netflix}
-	Netflix è uns servizio di streaming on-demand di serie TV e film ad abbonamento. Il sistema utilizza lo standard MPEG-DASH e integra una protezione DRM sui dati inviati. I video, scalati in diverse qualità, vengono spezzati in chunk e richiesti ad uno ad uno dal client; la scelta della qualità da visualizzare viene calcolata in base al tempo necessario per scaricare la precedente.
+	Netflix è un servizio di streaming on-demand di serie TV e film ad abbonamento. Il sistema utilizza lo standard MPEG-DASH e integra una protezione DRM sui dati inviati. I video, scalati in diverse qualità, vengono spezzati in chunk e richiesti ad uno ad uno dal client; la scelta della qualità da visualizzare viene calcolata in base al tempo necessario per scaricare la precedente.
 	\\
 	Netflix si avvale dei servizi cloud di Amazon per soddisfare le richieste in modo scalabile e distribuito; inoltre, ha stipulato accordi con i principali \gls{ISP} dei paesi in cui il servizio è attivo, per poter sfruttare le \gls{CDN} locali e migliorare i tempi di risposta e di caricamento dei contenuti.
 
 	\subsection{Red5 Pro}
+	Red5 Pro è una piattaforma ibrida, che offre servizi di streaming facilmente integrabili con applicazioni e siti. Attualmente i protocolli supportati sono RTMP, RTSP, RTMPT, RTSP, HLS, mentre i formati sono FLV e H.264 MP4; inoltre dispone di SDK per Android e iOS.\@ Red5 Pro permette di controllare direttamente il bitrate di outbound dai server e offre i servizi di videochat a due vie o in gruppo. Da poco è stato aggiunto supporto anche a WebRTC.\@
+
 	\subsection{Contus Vplay}
+	Contus Vplay è una piattaforma di streaming ibrida, basata su \gls{AWS}. Il sistema sfrutta il servizi S3 e Elastic Transcode di Amazon, per la transcodifica dei file video caricati dagli utenti, e il Wowza Streaming Engine, il motore di transcodifica leader del mercato e che supporta la conversione ``al volo'', tramite l'utilizzo di server EC2.
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=16.5cm,height=10cm,keepaspectratio]{immagini/contus-vplay-cloud-architecture.jpg}
+			\caption[Architettura di Contus Vplay]{Architettura di Contus Vplay
+			\\
+			Source: sito web di Contus Vplay \href{http://www.contus.com/video-on-demand-solution.php}{www.contus.com/video-on-demand-solution.php}}
+		\end{center}
+	\end{figure}
+	Il servizio è predisposto per soddisfare le richieste dei clienti tramite tre protocolli, Apple HLS, MPEG-DASH e Microsoft Smooth Streaming, sulle principali piattaforme e con multiple qualità del video. La gestione dei contenuti avviene tramite una dashboard che viene mantenuta tramite una combinazione di server EC2 e il servizio CloudFront di \gls{AWS}. Oltre al sistema di streaming, Contus offre una serie di servizi allegati, come analisi sul traffico, profilazione, monetizzazione sugli annunci pubblicitari, cifratura delle connessioni e SDK per le maggiori piattaforme.
+
 	\subsection{Streamroot}
-	\subsection{Wowza Streaming Engine}
+	Streamroot offre un servizio di streaming ibrido. La sua particolarità rispetto alle altre soluzioni è quella di utilizzare un sistema di condivisione peer-to-peer dei contenuti scaricati dai clienti. In questo modo ciascun cliente non solo può contare sulla CDN che distribuisce i contenuti, ma anche su ogni altro utente che sta visualizzando gli stessi contenuti. Secondo i dati riportati dal servizio, questo tipo di distribuzione, unita al sistema di CDN, permette di abbassare il carico sui server di circa il 75\%. Streamroot viene utilizzato da molte aziende che hanno necessità di trasmettere ingenti quantità di dati, tra le quali Dailymotion, Eurosport e Canal+.
 
 \section{Tecnologie utilizzate}
 	\subsection{Linguaggi --- Java}
