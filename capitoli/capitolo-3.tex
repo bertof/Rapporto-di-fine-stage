@@ -158,19 +158,27 @@
 		\end{itemize}
 		
 
-	 \section{Struttura della piattaforma}
-		\subsection{Diagramma strutturale}
-		Diagramma UML\\
-		Spiegazione della funzione delle componenti
+\section{Struttura della piattaforma}
+Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete da utilizzare e la progettazione strutturale del sistema.
+	\subsection{Protocolli}
+	Ho esguito la scelta dei protocolli in collaborazione con il team di sviluppatori che lavorava sul client Android, per trovare la migliore soluzione in termini di latenza, throughput e complessità di implementazione.
+	\\
+	I protocolli UDP sono stati scartati a causa dei problemi con firewall riportati precedentemente. Per semplificare l'invio di dati generici, senza essere necessariamente legati ad un certo protocollo dello strato applicativo, abbiamo deciso di utilizzare dei WebSocket; questi permettono l'invio sia di singoli messaggi, sia di stream di dati. Inoltre, esistono implementazioni open-source dello standard per la maggior parte delle piattaforme, inclusi iOS e Android e Java, rendendo, quindi, l'implementazione di client e server più semplice.
+		 
+	\subsection{Diagramma strutturale}
+	Segue in Fig.~\ref{diagrammaclassi} il diagramma UML delle classi, semplificato.
 
-		\begin{figure}[H]
-			\begin{center}
-				\includegraphics[width=16.5cm,keepaspectratio]{UML/png/Design Model__Classes_5}
-				\caption{Diagramma delle classi del sistema}
-			\end{center}
-		\end{figure}
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[height=20cm,keepaspectratio]{UML/png/Design Model__SimpleClasses_6}
+			\caption{Diagramma delle classi del sistema}\label{diagrammaclassi}
+		\end{center}
+	\end{figure}
 
-	 \subsection{Confronto con soluzioni esistenti}
+		\subsubsection{Concrete model interfacce del modello}
+		Il modello è responsabile del salvataggio e della gestione delle infomazioni legate agli utenti, ai canali, alle registrazioni e 
+
+	\subsection{Confronto con soluzioni esistenti}
 		\subsubsection{YouTube}
 		\subsubsection{Netflix}
 		\subsubsection{Red5 Pro}
