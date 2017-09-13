@@ -84,9 +84,7 @@
 			Il sistema di storage si occupa dell'organizzazione dei contenuti, del loro salvataggio e del loro recupero. Al semplice filesystem viene associato un database, spesso non relazionale, per la gestione di metadati, testi, commenti e dati aggiuntivi. Il sistema deve permettere una veloce ed efficace ricerca dei contenuti, per permettere agli utenti di accedere alle informazioni volute.
 
 		\subsubsection{Outbound, protocolli e \gls{CDN}}
-			Nel caso della distribuzione di contenuti verso i client sono generalmente utilizzati protocolli basati su TCP, come MPEG-DASH, Apple HLS e Microsoft Smooth Streaming. Questo tipo di protocolli permettono più stream paralleli e la possibilità di eseguire caching dei contenuti trasmessi, particolarmente utili nel caso di utilizzo di \gls{CDN} per estendere la distribuzione. Queste reti, solitamente di proprietà delle aziende di telecomunicazione su cui poggiano gli ISP, offrono un servizio di caching che permette di spostare il carico di rete dovuto all'accesso ai contenuti dai server principali del servizio a server più piccoli e dislocati sul territorio. Questo tipo di distribuzione, non solo diminuisce il carico di rete, limitato quindi alla sola autorizzazione all'accesso, ma permette di avere latenza e tempi di caricamento minori da parte degli utenti.
-			\\
-			Un nuovo sitema di distribuzione, particolarmente efficace se accoppiato ad una CDN, é quello di aggiungere al client una componente che permetta la condivisione dei chunk di video scaricati tramite una rete peer-to-peer. In questo modo gli utenti hanno a disposizione una rete di distribuzione ancora più vasta e che aumenta in base all'aumento di utenza.
+			Nel caso della distribuzione di contenuti verso i client sono generalmente utilizzati protocolli basati su TCP, come MPEG-DASH, Apple HLS e Microsoft Smooth Streaming. Questo tipo di protocolli permettono più stream paralleli e la possibilità di eseguire caching dei contenuti trasmessi, particolarmente utili nel caso di utilizzo di \gls{CDN} per estendere la distribuzione. Queste reti, solitamente di proprietà delle aziende di telecomunicazione su cui poggiano gli ISP, offrono un servizio di caching che permette di spostare il carico di rete dovuto all'accesso ai contenuti dai server principali del servizio a server più piccoli e dislocati sul territorio. Questo tipo di distribuzione, non solo diminuisce il carico di rete, limitato quindi alla sola autorizzazione all'accesso, ma permette di avere latenza e tempi di caricamento minori da parte degli utenti.			
 
 		\subsubsection{Message relay}
 			Esistono casi di servizi di streaming che devono permettere il reinvio di dati tra due client, senza alcuna modifica ai contenuti trasmessi; in questo caso di parla di message relay. Questo tipo di servizio è fondamentale se i due client non possono comunicare direttamente, magari perché bloccati da firewall o nascosti da una rete con NAT.\@
@@ -271,6 +269,13 @@ Tra gli obiettivi desiderabili indicati dall'azienda sono presenti lo studio di 
 
 
 	\subsection{Streaming peer to peer}
+	Un nuovo sitema di distribuzione, particolarmente efficace se accoppiato ad una CDN, é quello di aggiungere al client una componente che permetta la condivisione dei chunk di video scaricati tramite una rete peer-to-peer. Gli utenti connessi diventano così parte della CDN migliorando aumentandone la portata in modo lineare seguendo la crescita della base di utenza.
+	\\
+	Esistono già soluzioni commerciali che adottano questo tipo di soluzione, ottenendo una grande riduzione del carico di rete sui server adibiti alla distribuzione e, di conseguenza, diminuendo i costi di gestione.
+	\\
+	Esistono anche soluzioni interamente peer-to-peer, come quella ideata dagli sviluppatori di WebTorrent\footnote{Sito web di WebTorrent: \href{https://webtorrent.io/}{webtorrent.io}}: il sistema sfrutta la rete BitTorrent e permete di condividere i contenuti man mano che vengono scaricati da altri utenti.
+	\\
+	Esistono anche soluzioni peer-to-peer per gli streaming real-time; una di queste è WebRTC:\@ tra le molteplici fnuzionalità dello standard è inclusa la possibilità di ritrasmettere i contenuti ricevuti agli altri utenti collegati allo stesso stream.
 
 \section{Qualifica}
 	\subsection{Verifica}
