@@ -251,12 +251,10 @@ Propongo di seguito un confronto con le più famose soluzioni esistenti.
 		%TODO: estendere
 		
 		\subsubsection{Strumenti di test e verifica}
-		Per eseguire test di unità e di integrazione ho utilizzato il framework JUnit, dopo un'attenta analisi delle sue funzionalità. Il sistema di test si è rivelato semplice ed efficace; mi ha permesso di realizzare test significativi con poco sforzo e ha contribuito alla buona qualità del codice.
-		\\
-		JUnit è stato utile anche per eseguire benchmark per valutare l'efficacia del prodotto, tramite la realizzazione di una simulazione di conversazione tra un numero definito di utenti.
-
+		Ho scelto di utilizzare il framework JUnit 4 per eseguire test di unità e di integrazione dopo un'attenta analisi delle sue funzionalità. Il sistema di test si è rivelato semplice ed efficace; mi ha permesso di realizzare test significativi con poco sforzo e ha contribuito alla buona qualità del codice. L'integrazione dell'IDE usato con JUnit permette anche di esportare i dati dei test, del coverage e delle analisi in formato HTML, facilmente consultabile anche senza strumenti di sviluppo dedicati. JUnit 4 è stato utile anche per eseguire benchmark per valutare l'efficacia del prodotto, tramite la realizzazione di una simulazione di conversazione tra un numero definito di utenti.
+		
 		\subsubsection{Strumenti di analisi di rete}
-		Wireshark
+		Per durante i test sulla sicurezza delle trasmissioni ho dovuto assicurarmi che il sistema inviasse contenuti sensibili non cifrati; per questo motivo ho avuto necessità di registrare le conversazioni tra alcuni utenti simulati. Per eseguire queste operazioni ho utilizzato Wireshark, un software open-source per l'analisi del traffico di rete. Wireshark permette di effettuare sniffing del traffico di rete, di visualizzare ciascun pacchetto e di filtrare facilmente i contenuti d'interesse. Tramite un'analisi eseguita con questo strumento ho potuto garantire che tutti i dati scambiati fossero cifrati end to end tramite TLS.\@
 		
 		\subsubsection{Strumenti di continuous integration}
 		Docker
