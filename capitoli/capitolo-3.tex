@@ -92,7 +92,7 @@
 			Esistono casi di servizi di streaming che devono permettere il reinvio di dati tra due client, senza alcuna modifica ai contenuti trasmessi; in questo caso di parla di message relay. Questo tipo di servizio è fondamentale se i due client non possono comunicare direttamente, magari perché bloccati da firewall o nascosti da una rete con NAT.\@
 
 			\subsubsection{Servizi annessi}
-			Molte piattaforme di streaming non si limitano alla sola trasmissione di contenenti ma offrono anche un certo numero di servizi annessi. In particolare le informazioni legate alla demografia degli utenti e alla loro profilazione sono di particolare interesse per i creatori. Inolte sono comuni servizi di monetizzazione e annunci pubblicitari, cifratura dei contenuti e sistemi DRM.
+			Molte piattaforme di streaming non si limitano alla sola trasmissione di contenenti ma offrono anche un certo numero di servizi annessi. In particolare le informazioni legate alla demografia degli utenti e alla loro profilazione sono di particolare interesse per i creatori. Inolte sono comuni servizi di monetizzazione e annunci pubblicitari, cifratura dei contenuti e sistemi DRM.\@
 
 
 	 \subsection{Trasmissione dei contenuti in mobilità}
@@ -169,8 +169,9 @@ Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete
 	\subsection{Protocolli}
 	Ho eseguito la scelta dei protocolli in collaborazione con il team di sviluppatori che lavorava sul client Android, per trovare la migliore soluzione in termini di latenza, throughput e complessità di implementazione.
 	\\
-	I protocolli UDP sono stati scartati a causa dei problemi con firewall riportati precedentemente. Per semplificare l'invio di dati generici, senza essere necessariamente legati ad un certo protocollo dello strato applicativo, abbiamo deciso di utilizzare dei WebSocket; questi permettono l'invio sia di singoli messaggi, sia di stream di dati. Inoltre, esistono implementazioni open-source dello standard per la maggior parte delle piattaforme, inclusi iOS e Android e Java, rendendo, quindi, l'implementazione di client e server più semplice.
-		 
+	I protocolli UDP sono stati scartati a causa dei problemi con firewall riportati precedentemente.
+	Le specifiche del servizio richiedono che sia possibile inviare messaggi di qualsiasi tipo, sia atomici, sia stream di dati. Per semplificare l'invio di dati generici, senza essere necessariamente legati ad un certo protocollo dello strato applicativo, abbiamo deciso di utilizzare dei WebSocket ed esistono implementazioni open-source dello standard per la maggior parte delle piattaforme, inclusi iOS e Android e Java, rendendo, quindi, l'implementazione di client e server più semplice.
+	
 	\subsection{Diagramma strutturale}
 	Segue in Fig.~\ref{diagrammaclassi} il diagramma UML delle classi semplificato.
 
@@ -231,25 +232,35 @@ Propongo di seguito un confronto con le più famose soluzioni esistenti.
 
 \section{Tecnologie utilizzate}
 	\subsection{Linguaggi --- Java}
-	 Integrazione facile con Android
+	Il linguaggio Java è stato scelto innanzitutto per la possibilità di eseguire il codice su qualisasi piattaforma che offra una JVM;\@ in questo modo il sistema puù essere eseguito su server con diversi sistemi operativi senza la necessità di riscriverne componenti o di essere ricompilato. Un altro vantaggio è quello di poter riutilizzare parte del codice scritto nel client Android, riducendone i tempi di sviluppo e aumentando la qualità del codice.
 
-	\subsection{Piattaforma --- Tomcat8 EE}
-
-	\subsection{Protocollo --- TCP su WebSocket}
+	\subsection{Piattaforma --- Apache Tomcat 8}
+	Un servizio Java che espone dei WebSocket ha bisogno di una piattaforma che ne gestisca gli accessi ovvero un componente che implementi la classe JavaServer. Per questo progetto ho deciso di utilizzare Apache Tomcat 8 per la suo supporto nativo ai WebSocket. Inoltre, Tomcat 8 è il server Java open-source più diffuso, la sua documentazione è sufficiente chiara e completa e attualmente è l'unico a supportare completamente l'ultima versione di Java.
 
 	\subsection{Tipo di dati scambiati --- JSON vs XML}
-	 Meno prolisso
-	 Scelto per semplificare la codifica della piattaforma
-	 Facile a comprendere
-	\subsection{Strumetni di supporto}
-				\subsubsection{Strumenti di versionamento}
-			Git e Bitbucket
-				\subsubsection{Strumenti di test e verifica}
-			JUnit
-				\subsubsection{Strumenti di analisi di rete}
-			Wireshark
-				\subsubsection{Strumenti di continuous integration}
-			Docker
+	Per poter inviare messaggi tramite un WebSocket è necessario definire una codifica. L'implementazione standard di Java permette di utilizzare stringhe di byte, stringhe di testo oppure di definire un codificatore e un decodificatore per gestire oggetti più complessi. Per semplificare lo sviluppo della piattaforma ho preferito utilizzare una codifica testuale, che mi permettesse di eseguire test automatici e manuali tramite client testuali. Le due codifiche maggiormente utilizzate che permettono di descrivere oggetti anche molto complessi sono JSON e XML.\@ Entrambe le codifiche soddisfano pienamente i requisiti necessari, ma JSON è molto meno prolisso di XML;\@ per questo motivo ho preferito tale linguaggio.
+
+	\subsection{Strumenti di supporto}
+		\subsubsection{Strumenti di codifica}
+		Lo strumento che ho utilizzato per codificare ed eseguire i test sul sistema è stato l'IDE IntelliJ Idea, sviluppato da JetBrains, nella versione open-source ``Community Edition''. Questo editor, progettato appositamente per Java, è ricco di utili strumenti per velocizzare la codifica e l'analisi, come lo smart code completion, per i suggerimenti contestuali per il completamento del codice, i code template, per la rapida generazione di strutture di codice prestabilite, e sistemi di analisi e di automatizzazione dei task, come l'aggiornamento delle dipendenze o l'esecuzione dei test.
+
+		\subsubsection{Strumenti di versionamento}
+		Lo strumento di versionamento utilizzato durante il progetto è stato quello comunemente utilizzato dall'azienda, ovvero Git, con l'ausilio dei server di BitBucket per l'automatizzazione di alcuni test.
+		\\
+		Il vantaggio di aver utilizzato Git durante lo sviluppo è stato quello di poter condividere velocemente le ultime modifiche con gli altri sviluppatori, pur mantendendo baseline sicure e testate.
+		%TODO: estendere
+		
+		\subsubsection{Strumenti di test e verifica}
+		Per eseguire test di unità e di integrazione ho utilizzato il framework JUnit, dopo un'attenta analisi delle sue funzionalità. Il sistema di test si è rivelato semplice ed efficace; mi ha permesso di realizzare test significativi con poco sforzo e ha contribuito alla buona qualità del codice.
+		\\
+		JUnit è stato utile anche per eseguire benchmark per valutare l'efficacia del prodotto, tramite la realizzazione di una simulazione di conversazione tra un numero definito di utenti.
+
+		\subsubsection{Strumenti di analisi di rete}
+		Wireshark
+		
+		\subsubsection{Strumenti di continuous integration}
+		Docker
+
 \section{Nuovi orizzonti}
 	\subsection{Blockchain}
 	\subsection{Streaming peer to peer}
