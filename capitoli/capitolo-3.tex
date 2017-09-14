@@ -279,8 +279,22 @@ Tra gli obiettivi desiderabili indicati dall'azienda sono presenti lo studio di 
 
 \section{Qualifica}
 	\subsection{Verifica}
+	la verifica di un prodotto è l'insieme delle operazioni atte a garantirne la qualità e il rispetto delle specifiche definite durante la progettazione. Può essere riassunto nella domanda ``\engl{Did I build the system right?}''
 		\subsubsection{Analisi statica}
+		L'analisi statica consiste nei test che possono essere eseguiti sul prodotto senza compilare ed eseguire il codice. In questo tipo di test possiamo trovare, quindi, analisi grammaticali del codice, test su errori tipici, test sui file di configurazione, controlli sulla duplicazione del codice, ecc.
+		\\
+		L'analisi statica del prodotto è stata delegata ai test interni dell'IDE utilizzato, IntelliJ Idea. Questo esegue molti dei test sopra citati in modo automatico, mentre il codice viene scritto, fornendo utili suggerimenti.
+		\\
+		Una funzionalità che mi è sembrata particolarmente utile durante la verifica è il controllo automatico sulle classi importate: l'IDE controlla quali classi importate nel file vengono effettivamente utilizzate, segnala le mancanti offrendo suggerimenti e permette di eliminare quelle non necessarie.
+
 		\subsubsection{Analisi dinamica}
+		Con analisi dinamica si intendono le operazioni di controllo fatte sul codice compilato ed eseguito. Quesi test includono asserzioni sullo stato dell'esecuzione ed esecuzioni controllate dei componenti, sia singolarmente, sia facendoli interagire l'uno con l'altro.
+		\\
+		Ho programmato l'analisi dinamica del prodotto durante l'analisi e la progettazione, per poi essere implementata durante la codifica. Ho realizzato i test di unità delle singole componenti e di integrazione, verificando che eseguissero i compiti assegnati dalle interfacce nel modo corretto, per poi passare ai test di sistema, eseguiti tramite simulazioni controllate.
+		\\
+		Un vantaggio importante nella scelta di eseguire test di sistema automatici è stata quella di poter valutare il prodotto nella sua interezza, generando un report chiaro sullo stato di sviluppo e sulle prestazioni ottenute. In particolare, dopo una prima fase di codifica ho scoperto un errore sulla gestione di alcuni task da parte del componente dedicato al reinvio dei messaggi proprio grazie a un test di questo tipo; alcuni messaggi non venivano inviati e le sessioni stabilite con i client venivano chiuse anticipatamente se il numero di utenti superava una certa soglia. La simulazione ha evidenzato questo problema e mi ha permesso di individuare e correggere il bug in poco tempo.
+
 	\subsection{Validazione}
+	La validazione di un prodotto consiste nel controllare che tutti i requisiti del prodotto vengano effettivamente sodisfatti e può essere riassunta nella domanda ``\engl{did I build the right system?}''
 		\subsubsection{Validazione interna}
-		\subsubsection{Validazione esterna}
+		Dato che il prodotto è destinato ad essere un componente di una più grande piattaforma, ancora in sviluppo, la validazione è stata interna. Il project manager e il mio tutor aziendale hanno eseguito tutti i test, le simulazioni e, come prova finale, hanno provato a comunicare tramite due client WebSocket.
