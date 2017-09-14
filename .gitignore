@@ -1,4 +1,5 @@
-
+#
+#
 # Created by https://www.gitignore.io/api/osx,vim,macos,linux,latex,windows,sublimetext,visualstudiocode
 
 ### LaTeX ###
@@ -24,7 +25,6 @@
 # *.pdf
 
 ## Generated if empty string is given at "Please type another file name for output:"
-.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -350,3 +350,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/osx,vim,macos,linux,latex,windows,sublimetext,visualstudiocode
+
