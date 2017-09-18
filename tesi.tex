@@ -33,10 +33,13 @@
 \usepackage[space]{grffile}            % immagini con spazi nel path
 
 \usepackage{hyperref}                  % collegamenti ipertestuali
+
 \hypersetup{
-   urlcolor=[rgb]{0,0.5,0.5},   
+   urlcolor=[rgb]{0,0.5,0.5},
+   citecolor=[rgb]{0,0.39,0},   
    colorlinks  = true
 }
+
 
 \usepackage{listings}                  % codici
 
@@ -57,13 +60,6 @@
    ]{glossaries}                       % glossario
 \makeglossaries{}
 
-%\usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
-                                       % eccellente pacchetto per la bibliografia;                                       % produce uno stile di citazione autore-anno;                                       % lo stile "numeric-comp" produce riferimenti numerici
-                                       % per includerlo nel documento bisogna:
-                                       % 1. compilare una prima volta tesi.tex;
-                                       % 2. eseguire: biber tesi
-                                       % 3. compilare ancora tesi.tex.
-
 \input{tesi-conf}
 
 \begin{document}
@@ -76,8 +72,7 @@
 \include{inizio/colophon}
 \include{inizio/citazione} %TODO: citazione + dedica a fondo pagina
 \include{inizio/emptypage}
-%TODO: sommario
-%TODO: Ringraziamenti
+\include{inizio/sommario}
 \include{inizio/convenzioni}
 \include{inizio/indici}
 

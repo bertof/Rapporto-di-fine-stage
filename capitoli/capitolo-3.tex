@@ -72,8 +72,13 @@ La prima fase del progetto ha vertito sull'acquisizione delle conoscenze del cam
 			Sebbene i protocolli basati su \gls{UDP} siano particolarmente adatti alle comunicazioni \engl{real-time}, soffrono di un grave problema legato alle regole applicate ai \engl{firewall}, specialmente nel caso di reti pubbliche o aziendali: capita molto spesso che per evitare minacce proveniente da reti esterne gli amministratori decidano di bloccare tutti, o quasi, i pacchetti UDP in entrata, a meno di risposta ad una chiamata proveniente dall'interno. Questa pratica è diventata molto comune, tanto che anche servizi di \engl{streaming}, come YouTube e Twitch, o di telecomunicazione, come Skype o Hangouts, siano stati costretti ad incapsulare il contenuto dei propri pacchetti \gls{UDP} in pacchetti \gls{TCP}, per superare le protezioni e offrire i propri servizi.
 
 		\subsubsection{WebRTC}
-			%TODO: schema e spiegazione del funzionamento
 			WebRTC è un insieme di protocolli di rete che permettono l'invio di messaggi in \engl{real-time} tramite connessioni \engl{peer-to-peer}. Il sistema è pensato per essere integrato nativamente nei browser, in modo tale da poter essere utilizzato, tramite un'interfaccia, da \engl{webapp} apposite per comunicare con componenti di backend e browser di altri utenti. WebRTC sfrutta il protocollo \gls{RTP}, per il trasferimento di audio e video, e lo stato attuale del suo supporto da parte dei principali browser è quasi totale: solo vecchie versioni di Internet Explorer e Safari non lo supportano, se non tramite plugin. Sebbene questa tecnologia sia standardizzata e il suo impiego sia sempre più frequente da parte di servizi di \engl{videochat}, le sue implementazioni per le piattaforme Android e iOS sono ancora acerbe e poco documentate; per questo motivo è ancora comune definire un protocollo di comunicazione specifico per l'applicazione, piuttosto di utilizzare questo \engl{standard}.
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[width=16.5cm,height=15cm,keepaspectratio]{immagini/webrtc-schema}
+					\caption{Schema generale del funzionamento di WebRTC}
+				\end{center}
+			\end{figure}
 
 	\subsection{Architettura di una piattaforma di \engl{streaming}}
 		\subsubsection{Struttura di massima}
@@ -99,8 +104,9 @@ La prima fase del progetto ha vertito sull'acquisizione delle conoscenze del cam
 			I contenuti caricati tramite il sistema di \engl{inbound} vengono, poi, inviati ai motori di codifica, componenti specializzati nell'\engl{encoding} dei video. A seconda del tipo di input è possibile scegliere se utilizzare un \gls{transcodificatore} per lo \engl{streaming}, in grado di rielaborare il formato video di uno \engl{stream} ``al volo'' e con poca latenza aggiuntiva, oppure, nel caso di file video, questi vengono caricati in \engl{storage} temporanei e successivamente elaborati da \glspl{transcodificatore} comuni.
 
 		\subsubsection{Storage e organizzazione dei contenuti}
-			%TODO: espandere
-			Il sistema di \engl{storage} si occupa dell'organizzazione dei contenuti, del loro salvataggio e del loro recupero. Al semplice \engl{filesystem} viene associato un \engl{database}, spesso non relazionale, per la gestione di metadati, testi, commenti e dati aggiuntivi. Il sistema deve permettere una veloce ed efficace ricerca dei contenuti, per permettere agli utenti di accedere alle informazioni volute.
+			Il sistema di \engl{storage} si occupa dell'organizzazione dei contenuti, del loro salvataggio e del loro recupero. Al semplice \engl{filesystem} viene associato un \engl{database}, spesso non relazionale, per la gestione di metadati, testi, commenti e dati aggiuntivi. Il sistema deve consentire una veloce ed efficace ricerca dei contenuti, per permettere agli utenti di accedere alle informazioni volute.
+			\\
+			L'organizzazione di una tale mole di dati non è banale e sono spesso utilizzate tecnologie di analisi del testo e degli argomenti simili a quelle nei motori di ricerca per il web; in questo modo è possibile suggerire all'utente contenuti che potrebbe, effettivamente, essere interessato a consumare, aumentando il tempo di persistenza sulla piattaforma e le probabilità che questo ritorni in futuro.
 
 		\subsubsection{Outbound, protocolli e \gls{CDN}}
 			Nel caso della distribuzione di contenuti verso i \engl{client} sono generalmente utilizzati protocolli basati su \gls{TCP}, come \gls{MPEG-DASH}, Apple \gls{HLS} e Microsoft Smooth Streaming. Questo tipo di protocolli permettono più \engl{stream} paralleli e la possibilità di eseguire caching dei contenuti trasmessi, particolarmente utili nel caso di utilizzo di \gls{CDN} per estendere la distribuzione. Queste reti, solitamente di proprietà delle aziende di telecomunicazione su cui poggiano gli \gls{ISP}, offrono un servizio di caching che permette di spostare il carico di rete dovuto all'accesso ai contenuti dai server principali del servizio a server più piccoli e dislocati sul territorio. Questo tipo di distribuzione, non solo diminuisce il carico di rete, limitato quindi alla sola autorizzazione all'accesso, ma permette di avere latenza e tempi di caricamento minori da parte degli utenti.			
@@ -113,8 +119,7 @@ La prima fase del progetto ha vertito sull'acquisizione delle conoscenze del cam
 
 
 	\subsection{Trasmissione dei contenuti in mobilità}
-			%TODO: aggiungere alla bibliografia http://www.telegraph.co.uk/technology/2016/11/01/mobile-web-usage-overtakes-desktop-for-first-time/
-			La quantità di utenti che consumano contenuti multimediali su applicazioni \engl{mobile} sempre più in aumento, tanto che nel Novembre 2016 si è registrato il sorpasso della quantità di utenti su tali piattaforme, rispetto ai \engl{desktop}. È in crescita anche l'utilizzo di questi dispositivi per eseguire live \engl{stream}, specialmente legati a social network, come Twitter, Facebook e Google+.
+			La quantità di utenti che consumano contenuti multimediali su applicazioni \engl{mobile} sempre più in aumento, tanto che nel Novembre 2016 si è registrato il sorpasso della quantità di utenti su tali piattaforme, rispetto ai \engl{desktop}\cite{mobiledesktopusage}. È in crescita anche l'utilizzo di questi dispositivi per eseguire live \engl{stream}, specialmente legati a social network, come Twitter, Facebook e Google+.
 			L'utilizzo di dispositivi \engl{mobile} aggiunge un ulteriore strato di complessità alla comunicazione con i servizi web, come anche le piattaforme di \engl{streaming}.
 			Le difficoltà maggiori che si incontrano in questo campo sono la limitata potenza computazionale dei dispositivi e autonomia energetica, i limiti imposti da una rete senza fili e la grande frammentazione dei sistemi, specialmente quando si tratta di Android.
 			La maggior parte dei problemi precedentemente citati viene gestito dal sistema operativo, ma restano le limitazioni fisiche, ovvero la velocità di trasferimento dei dati:
@@ -296,8 +301,7 @@ Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete
 		\subsubsection{Strumenti di versionamento}
 		Lo strumento di versionamento utilizzato durante il progetto è stato quello comunemente utilizzato dall'azienda, ovvero Git, con l'ausilio dei server di Bitbucket per l'automatizzazione di alcuni \engl{test}.
 		\\
-		Il vantaggio di aver utilizzato Git durante lo sviluppo è stato quello di poter condividere velocemente le ultime modifiche con gli altri sviluppatori, pur mantenendo baseline sicure e testate.
-		%TODO: estendere
+		Il vantaggio di aver utilizzato Git durante lo sviluppo è stato quello di poter condividere velocemente le ultime modifiche con gli altri sviluppatori, pur mantenendo baseline sicure e testate. Ciò significa che, se anche ci fossero stati dei gravi problemi in uno dei PC degli sviluppatori, tutto il codice che fosse stato già caricato su uno degli altri client o sul server sarebbe stato al sicuro e facilmente reperibile.
 		
 		\subsubsection{Strumenti di test e verifica}
 		Ho scelto di utilizzare il \engl{framework} JUnit 4 per eseguire \engl{test} di unità e di integrazione dopo un'attenta analisi delle sue funzionalità. Il sistema di \engl{test} si è rivelato semplice ed efficace; mi ha permesso di realizzare \engl{test} significativi con poco sforzo e ha contribuito alla buona qualità del codice. L'integrazione dell'IDE usato con JUnit permette anche di esportare i dati dei \engl{test}, del coverage e delle analisi in formato \gls{HTML}, facilmente consultabile anche senza strumenti di sviluppo dedicati. JUnit 4 è stato utile anche per eseguire benchmark per valutare l'efficacia del prodotto, tramite la realizzazione di una simulazione di conversazione tra un numero definito di utenti.
