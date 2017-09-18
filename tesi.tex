@@ -15,6 +15,8 @@
 \usepackage[english, italian]{babel}   % per scrivere in italiano e in inglese;
                                        % l'ultima lingua è predefinita
 
+\usepackage{tocbibind}                 % pacchetto per la gestione degli indici
+
 \usepackage{booktabs}                  % tabelle
 \usepackage{tabularx}                  % tabelle di larghezza prefissata\usepackage{longtable}                 % tabelle su più pagine\usepackage{ltxtable}                  % tabelle su più pagine e adattabili in larghezza
 
@@ -32,6 +34,13 @@
 
 \usepackage{hyperref}                  % collegamenti ipertestuali
 
+\hypersetup{
+   urlcolor=[rgb]{0,0.5,0.5},
+   citecolor=[rgb]{0,0.39,0},   
+   colorlinks  = true
+}
+
+
 \usepackage{listings}                  % codici
 
 \usepackage[dvipsnames]{xcolor}        % colori
@@ -46,16 +55,10 @@
 
 \usepackage[
    toc,                                % glossario nella table of contents
-   acronym                             % glossario di tipo acronym
+   acronym,
+   nomain                              % glossario di tipo acronym
    ]{glossaries}                       % glossario
 \makeglossaries{}
-
-%\usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
-                                       % eccellente pacchetto per la bibliografia;                                       % produce uno stile di citazione autore-anno;                                       % lo stile "numeric-comp" produce riferimenti numerici
-                                       % per includerlo nel documento bisogna:
-                                       % 1. compilare una prima volta tesi.tex;
-                                       % 2. eseguire: biber tesi
-                                       % 3. compilare ancora tesi.tex.
 
 \input{tesi-conf}
 
@@ -64,30 +67,30 @@
 %**************************************************************
 % Parte iniziale
 %**************************************************************
-
-\input{inizio/frontespizio}
-\input{inizio/colophon}
-%TODO: citazione + dedica a fondo pagina
-%TODO: pagina bianca
-%TODO: sommario
-%TODO: Ringraziamenti
-\input{inizio/indici}
+\hypersetup{linkcolor   = black}       % Cambio colore link a nero
+\include{inizio/frontespizio}
+\include{inizio/colophon}
+\include{inizio/citazione} %TODO: citazione + dedica a fondo pagina
+\include{inizio/emptypage}
+\include{inizio/sommario}
+\include{inizio/convenzioni}
+\include{inizio/indici}
 
 %**************************************************************
 % Contenuti
 %**************************************************************
-
+\hypersetup{linkcolor=[rgb]{0.0588,0.2863,0.5020}}       % Cambio colore link ad arancione
 \include{capitoli/capitolo-1}            % Introduzione - L'azienda
 \include{capitoli/capitolo-2}            % Scelta dello stage e rapporto con l'azienda
 \include{capitoli/capitolo-3}            % Progetto di stage
+\include{capitoli/capitolo-4}            % Analisi retrospettiva
 
 %\appendix%\input{capitoli/capitolo-A}            % Appendice A
 
 %**************************************************************
 % Parte finale
 %**************************************************************
-
-\printglossary[toctitle=Glossario]{}
+\printglossary[title=Glossario]{}
 \input{fine/bibliografia}
 
 \end{document}
