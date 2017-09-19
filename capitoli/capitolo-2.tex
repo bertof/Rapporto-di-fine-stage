@@ -2,7 +2,7 @@
 % Capitolo 2 - PERCHÉ - Scelta dello \engl{stage} e rapporto con l'azienda
 %**************************************************************
 \chapter{Scelta dello stage e rapporto con l'azienda}
-In questo capitolo tratterò il mio percorso di scelta dello stage, fornendo una descrizione delle proposte che ho ricevuto, dei motivi che mi hanno spinto a scegliere quello che ho realizzato e della pianificazione del lavoro.
+Questo sceondo capitolo tratta del mio percorso di scelta dello stage, fornendo una descrizione delle proposte che ho ricevuto, dei motivi che mi hanno spinto a scegliere quello che ho realizzato e della pianificazione del lavoro.
 
 \section{Lo stage per l'azienda}
 
@@ -11,8 +11,8 @@ In questo capitolo tratterò il mio percorso di scelta dello stage, fornendo una
    \begin{figure}[H]
       \begin{center}
          \includegraphics[width=16.5cm,keepaspectratio]{immagini/erastreaming-schema}
+         \caption{Schema generale del funzionamento della piattaforma di \engl{streaming}}
       \end{center}
-      \caption{Schema generale del funzionamento della piattaforma di \engl{streaming}}
    \end{figure}
    \paragraph*{} Il sistema che l'azienda vuole costruire è composto da tre elementi fondamentali, il \engl{client} dell'utente sul campo, il sistema di \engl{relay} e il \engl{client} dell'utente esperto. Il primo è realizzato con uno smartphone Android e un paio di Google Glass; permetterà di registrare audio e video, inviati al sistema di \engl{relay} tramite la rete del telefono, e di ricevere audio, video o messaggi di testo, inviati dal secondo \engl{client}. Il \engl{client} dell'utente esperto deve permettere di visualizzare e ascoltare i dati ricevuti e di poter rispondere con dati simili, per indicare al primo utente le azioni da compiere. Infine, il sistema di \engl{relay} è composta da due elementi, un cluster di server di \engl{relay} e un server amministratore; il primo è quello che si occupa del reinvio dei messaggi e della continuità della trasmissione tra i \engl{client} connessi, mentre il secondo è adibito alla gestione dei canali, dell'autenticazione degli utenti e del bilanciamento del carico tra i nodi di \engl{relay}.
    \paragraph*{}
@@ -20,8 +20,8 @@ In questo capitolo tratterò il mio percorso di scelta dello stage, fornendo una
    \begin{figure}[H]
       \begin{center}
          \includegraphics[width=12cm,keepaspectratio]{immagini/erastreaming-schema-attuale}
+         \caption{Schema delle componenti in fase di sviluppo}
       \end{center}
-      \caption{Schema delle componenti in fase di sviluppo}
    \end{figure}
    \paragraph*{} L'Obiettivo dello \engl{stage} è quello di sviluppare il \engl{software} del server di \engl{relay}, necessario per far comunicare i due \engl{client}. Il server deve permettere ai due dispositivi di inviarsi messaggi di qualsiasi tipo, senza che uno conosca l'indirizzo di rete dell'altro, e di gestire i canali e gli utenti tramite un \gls{API} amministratore.
    
