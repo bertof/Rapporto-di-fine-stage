@@ -246,7 +246,7 @@ Tra gli obiettivi desiderabili indicati dall'azienda sono presenti lo studio di 
 		\end{itemize}
 		
 
-\section{Struttura della piattaforma}
+\section{Architettura della piattaforma}
 Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete da utilizzare e la progettazione strutturale del sistema.
 	\subsection{Protocolli}
 	Ho eseguito la scelta dei protocolli in collaborazione con il \engl{team} di sviluppatori che lavorava sul \engl{client} Android, per trovare la migliore soluzione in termini di latenza, throughput e complessità di implementazione.
@@ -284,26 +284,26 @@ Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete
 		\subsubsection{Controller di Admin, User e Beacon}
 	I tre controller del sistema sono singleton e gestiscono le interazioni e aggiornano il modello. AdminServerController e UserServerController eseguono, rispettivamente, le azioni ricevute da un amministratore e da un utente. BeaconServerController è incaricato della creazione dei messaggi e del loro invio; utilizza un pattern command e una coda intelligente.
 
-\section{Tecnologie utilizzate}
-	\subsection{Linguaggi --- Java}
+\subsection{Tecnologie utilizzate}
+	\subsubsection{Linguaggio --- Java}
 	Il linguaggio Java è stato scelto innanzitutto per la possibilità di eseguire il codice su qualsiasi piattaforma che offra una \gls{JVM};\@ in questo modo il sistema può essere eseguito su server con diversi sistemi operativi senza la necessità di riscriverne componenti o di essere ricompilato. Un altro vantaggio è quello di poter riutilizzare parte del codice scritto nel \engl{client} Android, riducendone i tempi di sviluppo e aumentando la qualità del codice.
 
-	\subsection{Piattaforma --- Apache Tomcat 8}
+	\subsubsection{Piattaforma --- Apache Tomcat 8}
 	Un servizio Java che espone dei WebSocket ha bisogno di una piattaforma che ne gestisca gli accessi ovvero un componente che implementi la classe JavaServer. Per questo progetto ho deciso di utilizzare Apache Tomcat 8 per il suo supporto nativo ai WebSocket. Inoltre, Tomcat 8 è il server Java \engl{open-source} più diffuso, la sua documentazione è sufficientemente chiara e completa e attualmente è l'unico a supportare completamente l'ultima versione di Java.
 
-	\subsection{Tipo di dati scambiati --- \gls{JSON} vs \gls{XML}}
+	\subsubsection{Tipo di dati scambiati --- \gls{JSON} vs \gls{XML}}
 	Per poter inviare messaggi tramite un WebSocket è necessario definire una codifica. L'implementazione \engl{standard} di Java permette di utilizzare stringhe di byte, stringhe di testo oppure di definire un codificatore e un decodificatore per gestire oggetti più complessi. Per semplificare lo sviluppo della piattaforma ho preferito utilizzare una codifica testuale, che mi permettesse di eseguire \engl{test} automatici e manuali tramite semplici messaggi testuali. Le due codifiche maggiormente utilizzate che permettono di descrivere oggetti anche molto complessi sono \gls{JSON} e \gls{XML}.\@ Entrambe le codifiche soddisfano pienamente i requisiti necessari, ma \gls{JSON} è molto meno prolisso di \gls{XML};\@ per questo motivo ho preferito tale linguaggio.
 
-	\subsection{Strumenti di supporto}
-		\subsubsection{Strumenti di codifica}
+	\subsubsection{Strumenti di supporto}
+		\paragraph{Strumenti di codifica}
 		Lo strumento che ho utilizzato per codificare ed eseguire i \engl{test} sul sistema è stato l'IDE IntelliJ Idea, sviluppato da JetBrains, nella versione \engl{open-source} ``Community Edition''. Questo \engl{editor}, progettato appositamente per Java, è ricco di utili strumenti per velocizzare la codifica e l'analisi, come lo smart code completion, per i suggerimenti contestuali per il completamento del codice, i code template, per la rapida generazione di strutture di codice prestabilite, e sistemi di analisi e di automatizzazione dei task, come l'aggiornamento delle dipendenze o l'esecuzione dei \engl{test}.
 
-		\subsubsection{Strumenti di versionamento}
+		\paragraph{Strumenti di versionamento}
 		Lo strumento di versionamento utilizzato durante il progetto è stato quello comunemente utilizzato dall'azienda, ovvero Git, con l'ausilio dei server di Bitbucket per l'automatizzazione di alcuni \engl{test}.
 		\\
 		Il vantaggio di aver utilizzato Git durante lo sviluppo è stato quello di poter condividere velocemente le ultime modifiche con gli altri sviluppatori, pur mantenendo baseline sicure e testate. Ciò significa che, se anche ci fossero stati dei gravi problemi in uno dei PC degli sviluppatori, tutto il codice che fosse stato già caricato su uno degli altri client o sul server sarebbe stato al sicuro e facilmente reperibile.
 		
-		\subsubsection{Strumenti di test e verifica}
+		\paragraph{Strumenti di test e verifica}
 		Ho scelto di utilizzare il \engl{framework} JUnit 4 per eseguire \engl{test} di unità e di integrazione dopo un'attenta analisi delle sue funzionalità. Il sistema di \engl{test} si è rivelato semplice ed efficace; mi ha permesso di realizzare \engl{test} significativi con poco sforzo e ha contribuito alla buona qualità del codice. L'integrazione dell'IDE usato con JUnit permette anche di esportare i dati dei \engl{test}, del coverage e delle analisi in formato \gls{HTML}, facilmente consultabile anche senza strumenti di sviluppo dedicati. JUnit 4 è stato utile anche per eseguire benchmark per valutare l'efficacia del prodotto, tramite la realizzazione di una simulazione di conversazione tra un numero definito di utenti.
 		\begin{figure}[H]
 			\begin{center}
@@ -312,15 +312,15 @@ Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete
 			\end{center}
 		\end{figure}
 		
-		\subsubsection{Strumenti di analisi di rete}
+		\paragraph{Strumenti di analisi di rete}
 		Durante i \engl{test} sulla sicurezza delle trasmissioni ho dovuto assicurarmi che il sistema inviasse contenuti sensibili non cifrati; per questo motivo ho avuto necessità di registrare le conversazioni tra alcuni utenti simulati. Per eseguire queste operazioni ho utilizzato Wireshark, un \engl{software} \engl{open-source} per l'analisi del traffico di rete. Wireshark permette di effettuare sniffing del traffico di rete, di visualizzare ciascun pacchetto e di filtrare facilmente i contenuti d'interesse. Tramite un'analisi eseguita con questo strumento ho potuto garantire che tutti i dati scambiati fossero cifrati end to end tramite \gls{TLS}.\@
 		
-		\subsubsection{Strumenti di continuous integration}
+		\paragraph{Strumenti di continuous integration}
 		Per poter garantire l'indipendenza dalla piattaforma di sviluppo, in particolare durante l'esecuzione dei \engl{test}, ho utilizzato un sistema \gls{Docker}. Questo strumento permette di configurare facilmente l'installazione e la configurazione di un \engl{software} in sviluppo su una macchina virtuale minimale e di eseguire \engl{test} e script su di essa. Tramite l'integrazione con Bitbucket ho potuto automatizzare queste attività, fornendo una maggiore qualità al codice senza dover svolgere compiti ripetitivi e onerosi in termini di tempo.
 		\paragraph*{}
 		Tramite le \engl{pipeline}, il sistema di configurazione delle operazioni sui container \gls{Docker} di Bitbucket, ho potuto automatizzare anche il deploy dell'applicazione, limitando i tempi di manutenzione necessari al suo aggiornamento manuale.
 
-		\subsubsection{Strumenti di debugging}
+		\paragraph{Strumenti di debugging}
 		Durante la codifica, specialmente durante la scrittura delle componenti per la gestione dei messaggi, mi è stato molto utile la possibilità di eseguire parti del programma in modalità debug. Questa permette di interrompere temporaneamente l'esecuzione in punti prestabiliti, semplificando la comprensione della sequenza di azioni avvenute e fornendo maggiori informazioni sulla \engl{stack trace} del programma, ovvero la pila di funzioni che stanno venendo eseguite.
 		\\
 		IntelliJ Idea integra questa modalità e raccoglie le informazioni ottenute in un'interfaccia semplice da comprendere. L'editor mostra anche lo stato delle singole variabili, sia su una scheda apposita, sia direttamente sul codice. 
