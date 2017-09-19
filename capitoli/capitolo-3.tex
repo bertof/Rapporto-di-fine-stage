@@ -132,10 +132,10 @@ La prima fase del progetto ha avuto come argomento centrale l'acquisizione delle
 		\subsubsection{Bluetooth}
 			Bluetooth 5 ha un throughput molto più basso dei precedenti canali di comunicazione; raggiunge, infatti, circa 50 Mbit/s, un \engl{bitrate} appena sufficiente alla trasmissione di video HD, al contrario, però, la distanza tra il trasmittente e il ricevente è molto più ridotto. Il vantaggio principale di Bluetooth è quello di utilizzare una minore quantità di energia elettrica per comunicare con altri dispositivi.
 
-\section{Nuovi orizzonti}
+\subsection{Nuovi orizzonti}
 Tra gli obiettivi desiderabili indicati dall'azienda sono presenti lo studio di alcuni campi innovativi e la possibilità di utilizzarli nel contesto dello \engl{streaming} video. Seguono i risultati dei miei studi e delle mie ricerche a riguardo.
 
-	\subsection{Blockchain}
+	\subsubsection{Blockchain}
 	\engl{Blockchain} è una tecnologia che permette di rendere delle informazioni pubbliche virtualmente impossibili da alterare. Il sistema si basa su catene di nodi distribuite in una rete \engl{peer-to-peer}; ogni nodo contiene una certa quantità di informazioni fissata, un numero intero variabile, detto nonce, e l'hash dell'ultimo nodo della catena.
 	\begin{figure}[H]
 		\begin{center}
@@ -152,7 +152,7 @@ Tra gli obiettivi desiderabili indicati dall'azienda sono presenti lo studio di 
 	\\
 	Una soluzione potrebbe essere quella di ottenere crediti per l'utilizzo del servizio, oppure un certo valore monetario; il problema di questo approccio è che potrebbe non essere autocontenuto nella sola piattaforma, limitandone l'efficacia e l'interesse. Esistono, inoltre, soluzioni meno onerose per la condivisione di file video su grande scala in modo decentralizzato, pur mantenendo la consistenza dei dati, come ad esempio il sistema Torrent, che permette di suddividere delle informazioni in blocchi cifrati univocamente identificati e di condividerli con chiunque ne faccia richiesta; in questo modo è comunque possibile garantire che il contenuto di ciascun blocco non sia stato alterato, senza necessità della complessità aggiunta da una blockchain.
 
-	\subsection{Streaming peer to peer}
+	\subsubsection{Streaming peer to peer}
 	Un nuovo sistema di distribuzione, particolarmente efficace se accoppiato ad una \gls{CDN}, è quello di aggiungere al \engl{client} una componente che permetta la condivisione dei chunk di video scaricati tramite una rete \engl{peer-to-peer}. Gli utenti connessi diventano così parte della \gls{CDN} migliorando aumentandone la portata in modo lineare seguendo la crescita della base di utenza.
 	\\
 	Esistono già soluzioni commerciali che adottano questo tipo di soluzione, ottenendo una grande riduzione del carico di rete sui server adibiti alla distribuzione e, di conseguenza, diminuendo i costi di gestione.
@@ -161,22 +161,22 @@ Tra gli obiettivi desiderabili indicati dall'azienda sono presenti lo studio di 
 	\paragraph*{}
 	Sono state realizzate anche soluzioni \engl{peer-to-peer} per gli \engl{streaming} \engl{real-time}; una di queste è WebRTC:\@ tra le molteplici funzionalità dello \engl{standard} è inclusa la possibilità di ritrasmettere i contenuti ricevuti agli altri utenti collegati allo stesso \engl{stream}.
 
-	\section{Analisi delle soluzioni esistenti}
+	\subsubsection{Analisi delle soluzioni esistenti}
 	Propongo di seguito un'analisi delle più famose soluzioni commerciali di \engl{streaming}.
-		\subsection{YouTube}
+		\paragraph{YouTube}
 		YouTube utilizza lo \engl{standard} \gls{RTSP} per l'\engl{inbound} di \engl{stream} video \engl{real-time}, mentre il principale protocollo per la trasmissione è MPEG-DASH;\@ questa scelta permette di ottenere una piattaforma facilmente accessibile, pur perdendo una parte del throughput a causa del protocollo di trasporto. YouTube permette \engl{streaming}-on demand dei video caricati dagli utenti, inoltre ha integrato il servizio con un sistema live-\engl{streaming} ibrido nel Settembre del 2016. Attualmente YouTube supporta video filmati con tecnologie 3D e video 360\textdegree, integrati con la piattaforma Google Cardboard. Il formato \engl{standard} utilizzato da YouTube è H.264/MPEG-4 AVC, ma è in corso una migrazione verso il formato WebM.
 		\paragraph*{}
 		YouTube associa al suo servizio di \engl{streaming} una serie di servizi paralleli, come il sistema di monetizzazione di AdMob e di pubblicità AdSense e quello di profilazione e analisi Google Analytics.
 	
-		\subsection{Netflix}
+		\paragraph{Netflix}
 		Netflix è un servizio di \engl{streaming} \engl{on-demand} di serie TV e film ad abbonamento. Il sistema utilizza lo \engl{standard} \gls{MPEG-DASH} e integra una protezione \gls{DRM} sui dati inviati. I video, scalati in diverse qualità, vengono spezzati in chunk e richiesti ad uno ad uno dal \engl{client}; la scelta della qualità da visualizzare viene calcolata in base al tempo necessario per scaricare la precedente.
 		\paragraph*{}
 		Netflix si avvale dei servizi \engl{cloud} di Amazon per soddisfare le richieste in modo scalabile e distribuito; inoltre, ha stipulato accordi con i principali \gls{ISP} dei paesi in cui il servizio è attivo, per poter sfruttare le \gls{CDN} locali e migliorare i tempi di risposta e di caricamento dei contenuti.
 	
-		\subsection{Red5 Pro}
+		\paragraph{Red5 Pro}
 		Red5 Pro è una piattaforma ibrida, che offre servizi di \engl{streaming} facilmente integrabili con applicazioni e siti. Attualmente i protocolli supportati sono \gls{RTMP}, \gls{RTSP}, \gls{RTMPT}, \gls{RTSP}, \gls{HLS}, mentre i formati sono FLV e H.264 MP4; inoltre dispone di \gls{SDK} per Android e iOS.\@ Red5 Pro permette di controllare direttamente il \engl{bitrate} di \engl{outbound} dai server e offre i servizi di \engl{videochat} a due vie o in gruppo. Da poco è stato aggiunto supporto anche a WebRTC.\@
 	
-		\subsection{Contus Vplay}
+		\paragraph{Contus Vplay}
 		Contus Vplay è una piattaforma di \engl{streaming} ibrida, basata su \gls{AWS}. Il sistema sfrutta i servizi \gls{S3} e Elastic Transcode di Amazon, per la transcodifica dei file video caricati dagli utenti, e il Wowza Streaming Engine\footnote{Sito web di Wowza Streaming Engine: \href{https://www.wowza.com/products/streaming-engine}{www.wowza.com/products/streaming-engine}}, il motore di transcodifica leader del mercato e che supporta la conversione ``al volo'', il quale viene installato in istanze server \gls{EC2}.
 		\begin{figure}[H]
 			\begin{center}
@@ -188,7 +188,7 @@ Tra gli obiettivi desiderabili indicati dall'azienda sono presenti lo studio di 
 		\end{figure}
 		\paragraph*{} Il servizio è predisposto per soddisfare le richieste dei clienti tramite tre protocolli, Apple \gls{HLS}, \gls{MPEG-DASH} e Microsoft Smooth Streaming, sulle principali piattaforme e con multiple qualità del video. La gestione dei contenuti avviene tramite una dashboard che viene mantenuta tramite una combinazione di server \gls{EC2} e il servizio CloudFront di \gls{AWS}. Oltre al sistema di \engl{streaming}, Contus offre una serie di servizi allegati, come analisi sul traffico, profilazione, monetizzazione sugli annunci pubblicitari, cifratura delle connessioni e \gls{SDK} per le maggiori piattaforme.
 	
-		\subsection{Streamroot}
+		\paragraph{Streamroot}
 		Streamroot offre un servizio di \engl{streaming} ibrido. La sua particolarità rispetto alle altre soluzioni è quella di utilizzare un sistema di condivisione \engl{peer-to-peer} dei contenuti scaricati dai clienti. In questo modo ciascun cliente non solo può contare sulla \gls{CDN}, ma anche su ogni altro utente che sta visualizzando gli stessi contenuti. Secondo i dati riportati dal servizio, questo tipo di distribuzione, unita al sistema di \gls{CDN}, permette di abbassare il carico sui server di circa il 75\%. Streamroot viene utilizzato da molte aziende che hanno necessità di trasmettere ingenti quantità di dati, tra le quali Dailymotion, Eurosport e Canal+.
 	
 
