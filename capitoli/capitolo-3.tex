@@ -332,7 +332,6 @@ Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete
 		\end{figure}
 
 \section{Qualifica}
-%TODO: essere più quantitativo, nell'intera sezione
 	\subsection{Verifica}
 	la verifica di un prodotto è l'insieme delle operazioni atte a garantirne la qualità e il rispetto delle specifiche definite durante la progettazione. Può essere riassunto nella domanda ``\engl{did I build the system right?}''
 		\subsubsection{Analisi statica}
@@ -348,6 +347,77 @@ Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete
 		Ho programmato l'analisi dinamica del prodotto durante l'analisi e la progettazione, per poi essere implementata durante la codifica. Ho realizzato i \engl{test} di unità delle singole componenti e di integrazione, verificando che eseguissero i compiti assegnati dalle interfacce nel modo corretto, per poi passare ai \engl{test} di sistema, eseguiti tramite simulazioni controllate.
 		\paragraph*{}
 		Un vantaggio importante nella scelta di eseguire \engl{test} di sistema automatici è stata quella di poter valutare il prodotto nella sua interezza, generando un report chiaro sullo stato di sviluppo e sulle prestazioni ottenute. In particolare, dopo una prima fase di codifica ho scoperto un errore sulla gestione di alcuni task da parte del componente dedicato al reinvio dei messaggi proprio grazie a un \engl{test} di questo tipo; alcuni messaggi non venivano inviati e le sessioni stabilite con i \engl{client} venivano chiuse anticipatamente se il numero di utenti superava una certa soglia. La simulazione ha evidenziato questo problema e mi ha permesso di individuare e correggere il bug in poco tempo.
+		
+		\subsubsection{Test}
+		Ho progettato i test del sistema prevedendo la tipica struttura sistema-integrazione-unità, tramite la quale ho definito i test di sistema, basati sui requisiti; i test di integrazione, che garantiscono il corretto funzionamento delle comunicazioni e delle interfacce tra i moduli del prodotto, e i test di unità, che verificano il comportamento delle singole unità.
+		\subsubsection{Test di unità}
+		\begin{table}[H]
+			\centering
+			\begin{tabularx}{\textwidth}{ X X X }
+				\toprule
+				\textbf{Nome batteria di test} & \textbf{Stato} & \textbf{Componenti testati} \\
+				\midrule
+				ChannelTest 					& Superato  & Channel 					\\ 
+				ConcreteModelTest 			& Superato 	& ConcreteModel 			\\
+				UserIDTest 						& Superato 	& UserID 					\\
+				AuthTokenTest 					& Superato 	& AuthToken 				\\
+				ConcreteUserTest 				& Superato 	& ConcreteUser 			\\
+				RandomTokenGeneratorTest 	& Superato 	& RandomTokenGenerator 	\\
+				AdminServerControllerTest 	& Superato 	& AdminServerController \\
+				UserServerControllerTest 	& Superato  & UserServerController 	\\ 			  
+				StringMessageContentTest 	& Superato  & StringMessageContent 	\\ 
+				WrappedMessageTest 			& Superato 	& WrappedMessage 			\\
+			\end{tabularx}
+			\caption{Tabella dei test di unità}	
+		\end{table}
+
+		\subsubsection{Test di integrazione}
+		\begin{table}[H]
+			\centering
+			\begin{tabularx}{\textwidth}{ X X X }
+				\toprule
+				\textbf{Nome batteria di test} & \textbf{Stato} & \textbf{Componenti testati} \\
+				\midrule
+				UserServerControllerTest 	& Superato  & 	UserServerController,\newline{}
+																		ConcreteModel,\newline{}
+																		BeaconServerController,\newline{}
+																		AuthToken \\
+				AdminServerControllerTest 	& Superato 	& 	AdminServerController,\newline{}
+																		ConcreteModel,\newline{}
+																		AuthToken \\
+				ConcreteModelTest 			& Superato 	& 	ConcreteModel,\newline{}
+																		ChannelKey,\newline{}
+																		UserID \\
+				ConcreteUserTest 				& Superato 	& 	User,\newline{}
+																		UserID \\
+				UserServerControllerTest 	& Superato 	& 	UserServerController,\newline{}
+																		AdminServerController,\newline{}
+																		UserID,\newline{}
+																		User,\newline{}
+																		AuthToken,\newline{}
+																		WrappedMessage,\newline{}
+																		ConcreteModel \\
+				WrappedMessageTest 			& Superato	&	WrappedMessage,\newline{}
+																		StringMessageContent,\newline{}
+																		ChannelKey,\newline{}
+																		UserID \\
+
+			\end{tabularx}
+			\caption{Tabella dei test di integrazione}	
+		\end{table}
+
+		\subsubsection{Test di sistema}
+		\begin{table}[H]
+			\centering
+			\begin{tabularx}{\textwidth}{ X X X }
+				\toprule
+				\textbf{Nome batteria di test} & \textbf{Stato} & \textbf{Descrizione} \\
+				\midrule
+				UserRelaySpeedTest 	& Superato  & Test sul funzionamento dell'interfaccia utente e benchmark sulla velocità di relay \\ 
+				ServerAdminTest 		& Superato 	& Test sul funzionamento dell'interfaccia amministratore \\
+			\end{tabularx}
+			\caption{Tabella dei test di sistema}	
+		\end{table}
 
 	\subsection{Validazione}
 	La validazione di un prodotto consiste nel controllare che tutti i requisiti del prodotto vengano effettivamente soddisfatti e può essere riassunta nella domanda ``\engl{did I build the right system?}''
