@@ -350,74 +350,66 @@ Una volta definiti i casi d'uso, ho proceduto alla scelta dei protocolli di rete
 		
 		\subsubsection{Test}
 		Ho progettato i test del sistema prevedendo la tipica struttura sistema-integrazione-unità, tramite la quale ho definito i test di sistema, basati sui requisiti; i test di integrazione, che garantiscono il corretto funzionamento delle comunicazioni e delle interfacce tra i moduli del prodotto, e i test di unità, che verificano il comportamento delle singole unità.
+
 		\subsubsection{Test di unità}
-		\begin{table}[H]
-			\centering
-			\begin{tabularx}{\textwidth}{ X X X }
-				\toprule
-				\textbf{Nome batteria di test} & \textbf{Stato} & \textbf{Componenti testati} \\
-				\midrule
-				ChannelTest 					& Superato  & Channel 					\\ 
-				ConcreteModelTest 			& Superato 	& ConcreteModel 			\\
-				UserIDTest 						& Superato 	& UserID 					\\
-				AuthTokenTest 					& Superato 	& AuthToken 				\\
-				ConcreteUserTest 				& Superato 	& ConcreteUser 			\\
-				RandomTokenGeneratorTest 	& Superato 	& RandomTokenGenerator 	\\
-				AdminServerControllerTest 	& Superato 	& AdminServerController \\
-				UserServerControllerTest 	& Superato  & UserServerController 	\\ 			  
-				StringMessageContentTest 	& Superato  & StringMessageContent 	\\ 
-				WrappedMessageTest 			& Superato 	& WrappedMessage 			\\
-			\end{tabularx}
+		\begin{longtable}{ p{0.31\textwidth} p{0.31\textwidth} p{0.31\textwidth} }			
+			\toprule
+			\textbf{Nome batteria di test} & \textbf{Stato} & \textbf{Componenti testati} \\
+			\midrule
+			ChannelTest 					& Superato  & Channel 					\\ 
+			ConcreteModelTest 			& Superato 	& ConcreteModel 			\\
+			UserIDTest 						& Superato 	& UserID 					\\
+			AuthTokenTest 					& Superato 	& AuthToken 				\\
+			ConcreteUserTest 				& Superato 	& ConcreteUser 			\\
+			RandomTokenGeneratorTest 	& Superato 	& RandomTokenGenerator 	\\
+			AdminServerControllerTest 	& Superato 	& AdminServerController \\
+			UserServerControllerTest 	& Superato  & UserServerController 	\\ 			  
+			StringMessageContentTest 	& Superato  & StringMessageContent 	\\ 
+			WrappedMessageTest 			& Superato 	& WrappedMessage 			\\
 			\caption{Tabella dei test di unità}	
-		\end{table}
+		\end{longtable}
 
 		\subsubsection{Test di integrazione}
-		\begin{table}[H]
-			\centering
-			\begin{tabularx}{\textwidth}{ X X X }
-				\toprule
-				\textbf{Nome batteria di test} & \textbf{Stato} & \textbf{Componenti testati} \\
-				\midrule
-				UserServerControllerTest 	& Superato  & 	UserServerController,\newline{}
-																		ConcreteModel,\newline{}
-																		BeaconServerController,\newline{}
-																		AuthToken \\
-				AdminServerControllerTest 	& Superato 	& 	AdminServerController,\newline{}
-																		ConcreteModel,\newline{}
-																		AuthToken \\
-				ConcreteModelTest 			& Superato 	& 	ConcreteModel,\newline{}
-																		ChannelKey,\newline{}
-																		UserID \\
-				ConcreteUserTest 				& Superato 	& 	User,\newline{}
-																		UserID \\
-				UserServerControllerTest 	& Superato 	& 	UserServerController,\newline{}
-																		AdminServerController,\newline{}
-																		UserID,\newline{}
-																		User,\newline{}
-																		AuthToken,\newline{}
-																		WrappedMessage,\newline{}
-																		ConcreteModel \\
-				WrappedMessageTest 			& Superato	&	WrappedMessage,\newline{}
-																		StringMessageContent,\newline{}
-																		ChannelKey,\newline{}
-																		UserID \\
+		\begin{longtable}{ p{0.31\textwidth} p{0.31\textwidth} p{0.31\textwidth} }			
+			\toprule
+			\textbf{Nome batteria di test} & \textbf{Stato} & \textbf{Componenti testati} \\
+			\midrule
+			UserServerControllerTest 	& Superato  & 	UserServerController,\newline{}
+																	ConcreteModel,\newline{}
+																	BeaconServerController,\newline{}
+																	AuthToken \\
+			AdminServerControllerTest 	& Superato 	& 	AdminServerController,\newline{}
+																	ConcreteModel,\newline{}
+																	AuthToken \\
+			ConcreteModelTest 			& Superato 	& 	ConcreteModel,\newline{}
+																	ChannelKey,\newline{}
+																	UserID \\
+			ConcreteUserTest 				& Superato 	& 	User,\newline{}
+																	UserID \\
+			UserServerControllerTest 	& Superato 	& 	UserServerController,\newline{}
+																	AdminServerController,\newline{}
+																	UserID,\newline{}
+																	User,\newline{}
+																	AuthToken,\newline{}
+																	WrappedMessage,\newline{}
+																	ConcreteModel \\
+			WrappedMessageTest 			& Superato	&	WrappedMessage,\newline{}
+																	StringMessageContent,\newline{}
+																	ChannelKey,\newline{}
+																	UserID \\
 
-			\end{tabularx}
 			\caption{Tabella dei test di integrazione}	
-		\end{table}
+		\end{longtable}
 
 		\subsubsection{Test di sistema}
-		\begin{table}[H]
-			\centering
-			\begin{tabularx}{\textwidth}{ X X X }
+		\begin{longtable}{ p{0.31\textwidth} p{0.31\textwidth} p{0.31\textwidth} }
 				\toprule
 				\textbf{Nome batteria di test} & \textbf{Stato} & \textbf{Descrizione} \\
 				\midrule
 				UserRelaySpeedTest 	& Superato  & Test sul funzionamento dell'interfaccia utente e benchmark sulla velocità di relay \\ 
 				ServerAdminTest 		& Superato 	& Test sul funzionamento dell'interfaccia amministratore \\
-			\end{tabularx}
 			\caption{Tabella dei test di sistema}	
-		\end{table}
+		\end{longtable}
 
 	\subsection{Validazione}
 	La validazione di un prodotto consiste nel controllare che tutti i requisiti del prodotto vengano effettivamente soddisfatti e può essere riassunta nella domanda ``\engl{did I build the right system?}''
